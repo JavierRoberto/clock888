@@ -12,6 +12,7 @@
 		A3C1D2052146F67C00BEC14A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2032146F67C00BEC14A /* Main.storyboard */; };
 		A3C1D2072146F67E00BEC14A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2062146F67E00BEC14A /* Assets.xcassets */; };
 		A3C1D20A2146F67E00BEC14A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2082146F67E00BEC14A /* LaunchScreen.storyboard */; };
+		A3C1D2122146FB6700BEC14A /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A3C1D2062146F67E00BEC14A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3C1D2092146F67E00BEC14A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3C1D20B2146F67E00BEC14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */,
 				A3C1D2012146F67C00BEC14A /* ViewController.swift */,
+				A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */,
 				A3C1D2032146F67C00BEC14A /* Main.storyboard */,
 				A3C1D2062146F67E00BEC14A /* Assets.xcassets */,
 				A3C1D2082146F67E00BEC14A /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C1D2022146F67C00BEC14A /* ViewController.swift in Sources */,
+				A3C1D2122146FB6700BEC14A /* UIView+Autolayout.swift in Sources */,
 				A3C1D2002146F67C00BEC14A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
