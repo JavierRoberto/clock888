@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     lazy var clockLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .blue
+        label.backgroundColor = .blue 
         return label
     }()
     
