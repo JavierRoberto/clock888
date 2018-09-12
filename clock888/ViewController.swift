@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ViewController: UIViewController {
 
@@ -14,6 +15,7 @@ class ViewController: UIViewController {
     var time: Double = 0
     var timer: Timer?
     var isFirstTime: Bool = true
+    var bannerView: GADBannerView!
     
     lazy var clockView: UIView = {
         let view = UIView(frame: .zero)
@@ -25,7 +27,9 @@ class ViewController: UIViewController {
     lazy var clockLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .blue 
+        label.backgroundColor = .blue
+        label.font = UIFont.systemFont(ofSize: 25)
+        label.textAlignment = .center
         return label
     }()
     
@@ -51,6 +55,14 @@ class ViewController: UIViewController {
         
         clockView.layer.cornerRadius = 12
         clockView.clipsToBounds = true
+        
+        // In this case, we instantiate the banner with desired ad size.
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        
+        addBannerViewToView(bannerView)
     }
     
     func setupConstraints() {
@@ -64,6 +76,27 @@ class ViewController: UIViewController {
             
             button.heightAnchor.constraint(equalToConstant: 60),
             button.widthAnchor.constraint(equalToConstant: 60)
+            ])
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
             ])
     }
     

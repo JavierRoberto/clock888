@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B72FEC29DFD43D140E820FF /* Pods_clock888.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57714EF598B3B58890830BEE /* Pods_clock888.framework */; };
 		A3C1D2002146F67C00BEC14A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */; };
 		A3C1D2022146F67C00BEC14A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D2012146F67C00BEC14A /* ViewController.swift */; };
 		A3C1D2052146F67C00BEC14A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2032146F67C00BEC14A /* Main.storyboard */; };
 		A3C1D2072146F67E00BEC14A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2062146F67E00BEC14A /* Assets.xcassets */; };
 		A3C1D20A2146F67E00BEC14A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2082146F67E00BEC14A /* LaunchScreen.storyboard */; };
 		A3C1D2122146FB6700BEC14A /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */; };
+		A3CE290D2149D2B20060260F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CE290C2149D2B10060260F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57714EF598B3B58890830BEE /* Pods_clock888.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clock888.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C1D1FC2146F67C00BEC14A /* clock888.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clock888.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C1D2012146F67C00BEC14A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		A3C1D2092146F67E00BEC14A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3C1D20B2146F67E00BEC14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		A3CE290C2149D2B10060260F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B80127399897A2AE228C0637 /* Pods-clock888.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clock888.debug.xcconfig"; path = "Pods/Target Support Files/Pods-clock888/Pods-clock888.debug.xcconfig"; sourceTree = "<group>"; };
+		DF661627A32F065BC0045311 /* Pods-clock888.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clock888.release.xcconfig"; path = "Pods/Target Support Files/Pods-clock888/Pods-clock888.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B72FEC29DFD43D140E820FF /* Pods_clock888.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64B99AE7FEFA5ECC7B05B232 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57714EF598B3B58890830BEE /* Pods_clock888.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91CD21AC948317057799A9A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B80127399897A2AE228C0637 /* Pods-clock888.debug.xcconfig */,
+				DF661627A32F065BC0045311 /* Pods-clock888.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A3C1D1F32146F67B00BEC14A = {
 			isa = PBXGroup;
 			children = (
 				A3C1D1FE2146F67C00BEC14A /* clock888 */,
 				A3C1D1FD2146F67C00BEC14A /* Products */,
+				91CD21AC948317057799A9A6 /* Pods */,
+				64B99AE7FEFA5ECC7B05B232 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +89,7 @@
 				A3C1D2062146F67E00BEC14A /* Assets.xcassets */,
 				A3C1D2082146F67E00BEC14A /* LaunchScreen.storyboard */,
 				A3C1D20B2146F67E00BEC14A /* Info.plist */,
+				A3CE290C2149D2B10060260F /* GoogleService-Info.plist */,
 			);
 			path = clock888;
 			sourceTree = "<group>";
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3C1D20E2146F67E00BEC14A /* Build configuration list for PBXNativeTarget "clock888" */;
 			buildPhases = (
+				36E35A8F59D5127E05DFB361 /* [CP] Check Pods Manifest.lock */,
 				A3C1D1F82146F67C00BEC14A /* Sources */,
 				A3C1D1F92146F67C00BEC14A /* Frameworks */,
 				A3C1D1FA2146F67C00BEC14A /* Resources */,
+				6AD784539174A0C3C1678622 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +155,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C1D20A2146F67E00BEC14A /* LaunchScreen.storyboard in Resources */,
+				A3CE290D2149D2B20060260F /* GoogleService-Info.plist in Resources */,
 				A3C1D2072146F67E00BEC14A /* Assets.xcassets in Resources */,
 				A3C1D2052146F67C00BEC14A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36E35A8F59D5127E05DFB361 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-clock888-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AD784539174A0C3C1678622 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-clock888/Pods-clock888-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-clock888/Pods-clock888-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A3C1D1F82146F67C00BEC14A /* Sources */ = {
@@ -282,6 +353,7 @@
 		};
 		A3C1D20F2146F67E00BEC14A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B80127399897A2AE228C0637 /* Pods-clock888.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +373,7 @@
 		};
 		A3C1D2102146F67E00BEC14A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF661627A32F065BC0045311 /* Pods-clock888.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
