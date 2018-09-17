@@ -15,12 +15,13 @@ class ViewController: UIViewController {
     var time: Double = 0
     var timer: Timer?
     var isFirstTime: Bool = true
-    var bannerView: GADBannerView!
     
     lazy var clockView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .green
+        view.layer.cornerRadius = 12
+        view.clipsToBounds = true
         return view
     }()
     
@@ -42,6 +43,15 @@ class ViewController: UIViewController {
         return button
     }()
     
+    lazy var bannerView: GADBannerView = {
+        let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        return bannerView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -52,17 +62,7 @@ class ViewController: UIViewController {
         view.addSubview(clockView)
         clockView.addSubview(clockLabel)
         view.addSubview(button)
-        
-        clockView.layer.cornerRadius = 12
-        clockView.clipsToBounds = true
-        
-        // In this case, we instantiate the banner with desired ad size.
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        
-        addBannerViewToView(bannerView)
+        view.addSubview(bannerView)
     }
     
     func setupConstraints() {
@@ -75,28 +75,10 @@ class ViewController: UIViewController {
             clockView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             
             button.heightAnchor.constraint(equalToConstant: 60),
-            button.widthAnchor.constraint(equalToConstant: 60)
-            ])
-    }
-    
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: bottomLayoutGuide,
-                                attribute: .top,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: view,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
+            button.widthAnchor.constraint(equalToConstant: 60),
+            
+            bannerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
     }
     
