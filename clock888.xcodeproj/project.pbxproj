@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B72FEC29DFD43D140E820FF /* Pods_clock888.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57714EF598B3B58890830BEE /* Pods_clock888.framework */; };
+		A3B5FA162152BFF500E3DDCA /* Hero.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3B5FA152152BFF500E3DDCA /* Hero.otf */; };
 		A3C1D2002146F67C00BEC14A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */; };
 		A3C1D2022146F67C00BEC14A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D2012146F67C00BEC14A /* ViewController.swift */; };
 		A3C1D2052146F67C00BEC14A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2032146F67C00BEC14A /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		57714EF598B3B58890830BEE /* Pods_clock888.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clock888.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3B5FA152152BFF500E3DDCA /* Hero.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hero.otf; sourceTree = "<group>"; };
 		A3C1D1FC2146F67C00BEC14A /* clock888.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clock888.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C1D2012146F67C00BEC14A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A33112EE215067E7001797C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A3B5FA152152BFF500E3DDCA /* Hero.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A3C1D1F32146F67B00BEC14A = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */,
+				A33112EE215067E7001797C3 /* Resources */,
 				A3C1D2012146F67C00BEC14A /* ViewController.swift */,
 				A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */,
 				A3C1D2032146F67C00BEC14A /* Main.storyboard */,
@@ -155,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C1D20A2146F67E00BEC14A /* LaunchScreen.storyboard in Resources */,
+				A3B5FA162152BFF500E3DDCA /* Hero.otf in Resources */,
 				A3CE290D2149D2B20060260F /* GoogleService-Info.plist in Resources */,
 				A3C1D2072146F67E00BEC14A /* Assets.xcassets in Resources */,
 				A3C1D2052146F67C00BEC14A /* Main.storyboard in Resources */,

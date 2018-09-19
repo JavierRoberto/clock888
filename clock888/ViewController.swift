@@ -16,31 +16,61 @@ class ViewController: UIViewController {
     var timer: Timer?
     var isFirstTime: Bool = true
     
-    lazy var clockView: UIView = {
+    lazy var stack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [topView, bottomView])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        return stack
+    }()
+    
+    lazy var topView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .green
-        view.layer.cornerRadius = 12
-        view.clipsToBounds = true
+        view.backgroundColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 0.1)
+        return view
+    }()
+    
+    lazy var bottomView: UIView = {
+        let view = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
         return view
     }()
     
     lazy var clockLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .blue
-        label.font = UIFont.systemFont(ofSize: 25)
+        label.backgroundColor = .clear
+        label.font = UIFont(name: "Hero", size: 70)
         label.textAlignment = .center
+        label.textColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 1)
+        label.text = "0:00"
         return label
     }()
     
     lazy var button: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .green
-        button.setTitle("title", for: UIControl.State.normal)
+        button.setTitle("START", for: .normal)
+        
+        button.titleLabel?.font = UIFont(name: "Hero", size: 40)
+        button.titleLabel?.font.withSize(40)
+        button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: UIControl.Event.touchUpInside)
+        button.setBackgroundImage(UIImage(named: "backgroundButton"), for: .normal)
         return button
+    }()
+    
+    lazy var helpLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .clear
+        label.font = UIFont(name: "Hero-Regular", size: 15)
+        label.textAlignment = .center
+        label.textColor = .black
+        label.text = "Time is going and you need to stop it at 8:88"
+        return label
     }()
     
     lazy var bannerView: GADBannerView = {
@@ -56,26 +86,40 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupConstraints()
+        
+        for family: String in UIFont.familyNames
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
     }
     
     func setupView() {
-        view.addSubview(clockView)
-        clockView.addSubview(clockLabel)
-        view.addSubview(button)
+        
+        view.addSubview(stack)
+        stack.addSubview(clockLabel)
+        stack.addSubview(button)
+        stack.addSubview(helpLabel)
         view.addSubview(bannerView)
     }
     
     func setupConstraints() {
-        clockLabel.fit(to: clockView, insets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
-        button.center(into: view)
+        stack.fit(to: view)
+        button.center(into: stack)
         NSLayoutConstraint.activate([
-            clockView.heightAnchor.constraint(equalToConstant: 100),
-            clockView.widthAnchor.constraint(equalToConstant: 250),
-            clockView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            clockView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            
-            button.heightAnchor.constraint(equalToConstant: 60),
-            button.widthAnchor.constraint(equalToConstant: 60),
+            clockLabel.heightAnchor.constraint(equalToConstant: 100),
+            clockLabel.widthAnchor.constraint(equalToConstant: 250),
+            clockLabel.centerXAnchor.constraint(equalTo: stack.centerXAnchor),
+            clockLabel.topAnchor.constraint(equalTo: stack.topAnchor, constant: 100),
+
+            button.heightAnchor.constraint(equalToConstant: 235),
+            button.widthAnchor.constraint(equalToConstant: 235),
+
+            helpLabel.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 50),
+            helpLabel.centerXAnchor.constraint(equalTo: stack.centerXAnchor),
             
             bannerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -103,18 +147,20 @@ class ViewController: UIViewController {
     func initTime() {
         isFirstTime = false
         startTimer()
+        button.setTitle("STOP", for: .normal)
     }
     
     func stopTime() {
         isFirstTime = true
         timer?.invalidate()
+        button.setTitle("START", for: .normal)
         
     }
 }
 
 extension TimeInterval {
     var minuteSecondMS: String {
-        return String(format:"%d:%02d.%03d", minute, second, millisecond)
+        return String(format:"%d:%02d.%02d", minute, second, millisecond)
     }
     var minute: Int {
         return Int((self/60).truncatingRemainder(dividingBy: 60))
