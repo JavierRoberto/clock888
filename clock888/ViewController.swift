@@ -169,6 +169,6 @@ extension TimeInterval {
         return Int(self.truncatingRemainder(dividingBy: 60))
     }
     var millisecond: Int {
-        return Int((self*1000).truncatingRemainder(dividingBy: 1000) )
+        return Int((self*100).truncatingRemainder(dividingBy: 100) )
     }
 }
