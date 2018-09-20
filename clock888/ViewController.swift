@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import Lottie
 
 class ViewController: UIViewController {
 
@@ -106,6 +107,8 @@ class ViewController: UIViewController {
         view.addSubview(bannerView)
     }
     
+    
+    
     func setupConstraints() {
         stack.fit(to: view)
         button.center(into: stack)
@@ -141,7 +144,14 @@ class ViewController: UIViewController {
     }
     
     @objc func buttonAction() {
-        isFirstTime ? initTime() : stopTime()
+//        isFirstTime ? initTime() : stopTime()
+        
+        
+        
+        let viewController = UIViewController()
+        viewController.view.fit(to: view)
+        viewController.transitioningDelegate = self
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func initTime() {
@@ -170,5 +180,20 @@ extension TimeInterval {
     }
     var millisecond: Int {
         return Int((self*100).truncatingRemainder(dividingBy: 100) )
+    }
+}
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let animationController = LOTAnimationTransitionController(animationNamed: "vcTransition1",
+                                                                   fromLayerNamed: "outLayer",
+                                                                   toLayerNamed: "inLayer",
+                                                                   applyAnimationTransform: false)
+        return animationController
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let animationController = LOTAnimationTransitionController(animationNamed: "vcTranstion2", fromLayerNamed: "outLayer", toLayerNamed: "inLayer", applyAnimationTransform: false)
+        return animationController
     }
 }
