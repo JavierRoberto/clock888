@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B72FEC29DFD43D140E820FF /* Pods_clock888.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57714EF598B3B58890830BEE /* Pods_clock888.framework */; };
+		A3A02DB62154277C00090680 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A02DB52154277C00090680 /* ResultVC.swift */; };
 		A3B5FA162152BFF500E3DDCA /* Hero.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3B5FA152152BFF500E3DDCA /* Hero.otf */; };
 		A3C1D2002146F67C00BEC14A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */; };
 		A3C1D2022146F67C00BEC14A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D2012146F67C00BEC14A /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		57714EF598B3B58890830BEE /* Pods_clock888.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clock888.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3A02DB52154277C00090680 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		A3B5FA152152BFF500E3DDCA /* Hero.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hero.otf; sourceTree = "<group>"; };
 		A3C1D1FC2146F67C00BEC14A /* clock888.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clock888.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */,
 				A33112EE215067E7001797C3 /* Resources */,
 				A3C1D2012146F67C00BEC14A /* ViewController.swift */,
+				A3A02DB52154277C00090680 /* ResultVC.swift */,
 				A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */,
 				A3C1D2032146F67C00BEC14A /* Main.storyboard */,
 				A3C1D2062146F67E00BEC14A /* Assets.xcassets */,
@@ -202,13 +205,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-clock888/Pods-clock888-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionAnimation/TransitionAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionTreasury/TransitionTreasury.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionTreasury.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C1D2022146F67C00BEC14A /* ViewController.swift in Sources */,
+				A3A02DB62154277C00090680 /* ResultVC.swift in Sources */,
 				A3C1D2122146FB6700BEC14A /* UIView+Autolayout.swift in Sources */,
 				A3C1D2002146F67C00BEC14A /* AppDelegate.swift in Sources */,
 			);

@@ -8,5 +8,6 @@ target 'clock888' do
   # Pods for clock888
 	pod 'Firebase/Core'
     pod 'Firebase/AdMob'
-    pod 'lottie-ios', '2.5'
+    pod 'TransitionTreasury', '~> 5.0'
+    pod 'TransitionAnimation', '~> 5.0'
 end

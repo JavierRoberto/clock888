@@ -20,17 +20,20 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.4)
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
-  - lottie-ios (2.5.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - TransitionAnimation (5.0.0):
+    - TransitionTreasury (~> 5.0)
+  - TransitionTreasury (5.0.0)
 
 DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Core
-  - lottie-ios (= 2.5)
+  - TransitionAnimation (~> 5.0)
+  - TransitionTreasury (~> 5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -40,8 +43,9 @@ SPEC REPOS:
     - FirebaseInstanceID
     - Google-Mobile-Ads-SDK
     - GoogleToolboxForMac
-    - lottie-ios
     - nanopb
+    - TransitionAnimation
+    - TransitionTreasury
 
 SPEC CHECKSUMS:
   Firebase: 25ed0412036d7d008568d1fb4d2e9d81ea8a0a2c
@@ -50,9 +54,10 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 05d779cbb97bd5bd5c51a38a903fc9cfe1b2454a
   Google-Mobile-Ads-SDK: 6e529e748b45507a2ca904e0b5a52669ba3920c4
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
-  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  TransitionAnimation: 5585d0eafbf4d7adc61fa8fef62ee2fe7878df27
+  TransitionTreasury: f88b7f9b4c61aa178a3c1dd446b64aebd990bda9
 
-PODFILE CHECKSUM: 8ccf5dbb2c456ab951f8cd3360a7948c9e7910dc
+PODFILE CHECKSUM: a29aceb2da90e06999ff905ec0651103e3a7ede4
 
 COCOAPODS: 1.5.3

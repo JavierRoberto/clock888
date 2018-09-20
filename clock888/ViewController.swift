@@ -8,9 +8,10 @@
 
 import UIKit
 import GoogleMobileAds
-import Lottie
+import TransitionTreasury
+import TransitionAnimation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ModalTransitionDelegate {
 
     var startTime: Double = 0
     var time: Double = 0
@@ -56,7 +57,6 @@ class ViewController: UIViewController {
         button.setTitle("START", for: .normal)
         
         button.titleLabel?.font = UIFont(name: "Hero", size: 40)
-        button.titleLabel?.font.withSize(40)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: UIControl.Event.touchUpInside)
         button.setBackgroundImage(UIImage(named: "backgroundButton"), for: .normal)
@@ -82,6 +82,8 @@ class ViewController: UIViewController {
         bannerView.load(GADRequest())
         return bannerView
     }()
+    
+    var tr_presentTransition: TRViewControllerTransitionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,15 +145,18 @@ class ViewController: UIViewController {
         clockLabel.text = "\(time.minuteSecondMS)"
     }
     
+    func present() {
+        let resultVC = ResultVC()
+        resultVC.modalDelegate = self // Don't forget to set modalDelegate
+        tr_presentViewController(resultVC, method: TRPresentTransitionMethod.fade, completion: {
+            print("Present finished.")
+        })
+    }
+    
     @objc func buttonAction() {
 //        isFirstTime ? initTime() : stopTime()
-        
-        
-        
-        let viewController = UIViewController()
-        viewController.view.fit(to: view)
-        viewController.transitioningDelegate = self
-        self.present(viewController, animated: true, completion: nil)
+        present()
+ 
     }
     
     func initTime() {
@@ -183,17 +188,3 @@ extension TimeInterval {
     }
 }
 
-extension ViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let animationController = LOTAnimationTransitionController(animationNamed: "vcTransition1",
-                                                                   fromLayerNamed: "outLayer",
-                                                                   toLayerNamed: "inLayer",
-                                                                   applyAnimationTransform: false)
-        return animationController
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let animationController = LOTAnimationTransitionController(animationNamed: "vcTranstion2", fromLayerNamed: "outLayer", toLayerNamed: "inLayer", applyAnimationTransform: false)
-        return animationController
-    }
-}
