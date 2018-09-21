@@ -1,5 +1,5 @@
 //
-//  ResultVC.swift
+//  SadVC.swift
 //  clock888
 //
 //  Created by Javier Roberto on 20/09/2018.
@@ -10,7 +10,7 @@ import UIKit
 import TransitionTreasury
 import TransitionAnimation
 
-class ResultVC: UIViewController {
+class SadVC: UIViewController {
 
     weak var modalDelegate: ModalViewControllerDelegate?
     let heightDismissButton: CGFloat = 60
@@ -25,7 +25,7 @@ class ResultVC: UIViewController {
     lazy var icon: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "happy")
+        imageView.image = UIImage(named: "sad")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -50,22 +50,12 @@ class ResultVC: UIViewController {
         return label
     }()
     
-    lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [icon, noLabel, descriptionLabel])
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = 20
-//        stack.alignment = .center
-        return stack
-    }()
-    
-    
     lazy var dismissButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Try again", for: .normal)
         
-        button.titleLabel?.font = UIFont(name: "Hero", size: 20)
+        button.titleLabel?.font = UIFont(name: "Hero", size: 26)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(red: 0.98, green: 0.25, blue: 0.38, alpha: 1)
         button.setImage(UIImage(named: "play"), for: .normal)
@@ -75,17 +65,18 @@ class ResultVC: UIViewController {
     }()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         self.view.backgroundColor = .white
         setupView()
         setupConstraints()
+        
     }
     
     func setupView() {
-        topView.addSubview(stackView)
         view.addSubview(topView)
         view.addSubview(dismissButton)
+        topView.addSubview(icon)
+        topView.addSubview(noLabel)
+        topView.addSubview(descriptionLabel)
     }
     
     
@@ -93,26 +84,27 @@ class ResultVC: UIViewController {
     
     func setupConstraints() {
         
-        stackView.fit(to: topView, insets: UIEdgeInsets(top: 130, left: 15, bottom: 15, right: 130))
+        
         topView.fit(toTop: view)
         noLabel.center(into: topView)
+        descriptionLabel.fit(horizontal: view, below: noLabel, insets: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
+        noLabel.fit(horizontal: view, below: icon, insets: UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0))
+        
         
         NSLayoutConstraint.activate([
             
             topView.bottomAnchor.constraint(equalTo: dismissButton.topAnchor, constant: heightDismissButton / 2),
-
-            
             
             icon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            icon.heightAnchor.constraint(equalToConstant: 128),
-//            icon.widthAnchor.constraint(equalToConstant: 128),
+            icon.heightAnchor.constraint(equalToConstant: 128),
+            icon.widthAnchor.constraint(equalToConstant: 128),
             
             dismissButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
             dismissButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
             dismissButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -150),
             dismissButton.heightAnchor.constraint(equalToConstant: heightDismissButton)
             
-        ])
+            ])
     }
 
     @objc func dismissView() {

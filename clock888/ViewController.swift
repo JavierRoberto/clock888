@@ -67,9 +67,10 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .clear
-        label.font = UIFont(name: "Hero-Regular", size: 15)
+        label.font = UIFont(name: "Hero", size: 20)
         label.textAlignment = .center
         label.textColor = .black
+        label.numberOfLines = 0
         label.text = "Time is going and you need to stop it at 8:88"
         return label
     }()
@@ -125,6 +126,8 @@ class ViewController: UIViewController, ModalTransitionDelegate {
 
             helpLabel.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 50),
             helpLabel.centerXAnchor.constraint(equalTo: stack.centerXAnchor),
+            helpLabel.leftAnchor.constraint(equalTo: stack.leftAnchor, constant: 20),
+            helpLabel.rightAnchor.constraint(equalTo: stack.rightAnchor, constant: -20),
             
             bannerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -146,9 +149,9 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     }
     
     func present() {
-        let resultVC = ResultVC()
-        resultVC.modalDelegate = self // Don't forget to set modalDelegate
-        tr_presentViewController(resultVC, method: TRPresentTransitionMethod.fade, completion: {
+        let happyVC = HappyVC()
+        happyVC.modalDelegate = self // Don't forget to set modalDelegate
+        tr_presentViewController(happyVC, method: TRPresentTransitionMethod.fade, completion: {
             print("Present finished.")
         })
     }
