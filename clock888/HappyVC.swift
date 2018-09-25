@@ -13,7 +13,7 @@ import TransitionAnimation
 class HappyVC: UIViewController {
 
     weak var modalDelegate: ModalViewControllerDelegate?
-    let heightDismissButton: CGFloat = 60
+    let heightshareButton: CGFloat = 60
     
     lazy var topView: UIView = {
         let view = UIView(frame: .zero)
@@ -50,7 +50,7 @@ class HappyVC: UIViewController {
         return label
     }()
     
-    lazy var dismissButton: UIButton = {
+    lazy var shareButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Share your result", for: .normal)
@@ -60,7 +60,7 @@ class HappyVC: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 1)
         button.setImage(UIImage(named: "Share"), for: .normal)
-        button.addTarget(self, action: #selector(dismissView), for: UIControl.Event.touchUpInside)
+        button.addTarget(self, action: #selector(share(sender:)), for: UIControl.Event.touchUpInside)
         button.layer.cornerRadius = 32
         return button
     }()
@@ -89,19 +89,14 @@ class HappyVC: UIViewController {
     
     func setupView() {
         view.addSubview(topView)
-        view.addSubview(dismissButton)
+        view.addSubview(shareButton)
         view.addSubview(playAgainButton)
         topView.addSubview(icon)
         topView.addSubview(noLabel)
         topView.addSubview(descriptionLabel)
     }
-    
-    
-    
-    
+
     func setupConstraints() {
-        
-        
         topView.fit(toTop: view)
         noLabel.center(into: topView)
         descriptionLabel.fit(horizontal: view, below: noLabel, insets: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
@@ -110,21 +105,21 @@ class HappyVC: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            topView.bottomAnchor.constraint(equalTo: dismissButton.topAnchor, constant: heightDismissButton / 2),
+            topView.bottomAnchor.constraint(equalTo: shareButton.topAnchor, constant: heightshareButton / 2),
             
             icon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             icon.heightAnchor.constraint(equalToConstant: 128),
             icon.widthAnchor.constraint(equalToConstant: 128),
             
-            dismissButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
-            dismissButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
-            dismissButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -150),
-            dismissButton.heightAnchor.constraint(equalToConstant: heightDismissButton),
+            shareButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
+            shareButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
+            shareButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -150),
+            shareButton.heightAnchor.constraint(equalToConstant: heightshareButton),
             
             playAgainButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
             playAgainButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
-            playAgainButton.heightAnchor.constraint(equalToConstant: heightDismissButton),
-            playAgainButton.topAnchor.constraint(equalTo: dismissButton.bottomAnchor, constant: 10)
+            playAgainButton.heightAnchor.constraint(equalToConstant: heightshareButton),
+            playAgainButton.topAnchor.constraint(equalTo: shareButton.bottomAnchor, constant: 10)
             
             ])
     }
@@ -132,4 +127,24 @@ class HappyVC: UIViewController {
     @objc func dismissView() {
         modalDelegate?.modalViewControllerDismiss(callbackData: nil)
     }
+    
+    @objc func share(sender:UIView){
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let textToShare = "Check out my app"
+        
+        if let myWebsite = URL(string: "http://itunes.apple.com/app/idXXXXXXXXX") {//Enter link to your app here
+            let objectsToShare = [textToShare, myWebsite, image ?? #imageLiteral(resourceName: "app-logo")] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            //Excluded Activities
+            activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+            //
+            
+            activityVC.popoverPresentationController?.sourceView = sender
+            self.present(activityVC, animated: true, completion: nil)
+        }    }
 }

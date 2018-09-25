@@ -1,0 +1,8 @@
+app_identifier("com.funtastic.clock888") # The bundle identifier of your app
+apple_id("funtasticstickers@gmail.com") # Your Apple email address
+
+itc_team_id("118493853") # App Store Connect Team ID
+team_id("A894P23KUL") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

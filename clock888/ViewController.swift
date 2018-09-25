@@ -59,7 +59,21 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         button.titleLabel?.font = UIFont(name: "Hero", size: 40)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: UIControl.Event.touchUpInside)
+        
         button.setBackgroundImage(UIImage(named: "backgroundButton"), for: .normal)
+        return button
+    }()
+    
+    lazy var goToHappyButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("go to Happy", for: .normal)
+        
+        button.titleLabel?.font = UIFont(name: "Hero", size: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(presentHappy), for: UIControl.Event.touchUpInside)
+        button.backgroundColor = .red
+//        button.setBackgroundImage(UIImage(named: "backgroundButton"), for: .normal)
         return button
     }()
     
@@ -102,17 +116,16 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     }
     
     func setupView() {
-        
         view.addSubview(stack)
         stack.addSubview(clockLabel)
         stack.addSubview(button)
         stack.addSubview(helpLabel)
         view.addSubview(bannerView)
+        view.addSubview(goToHappyButton)
     }
     
-    
-    
     func setupConstraints() {
+        
         stack.fit(to: view)
         button.center(into: stack)
         NSLayoutConstraint.activate([
@@ -130,13 +143,19 @@ class ViewController: UIViewController, ModalTransitionDelegate {
             helpLabel.rightAnchor.constraint(equalTo: stack.rightAnchor, constant: -20),
             
             bannerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            
+            goToHappyButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            goToHappyButton.heightAnchor.constraint(equalToConstant: 40),
+            goToHappyButton.widthAnchor.constraint(equalToConstant: 200),
+            goToHappyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
     }
     
     func startTimer(){
         startTime = Date().timeIntervalSinceReferenceDate
-        timer = Timer.scheduledTimer(timeInterval: 0.05,
+        timer = Timer.scheduledTimer(timeInterval: 0.01,
                              target: self,
                              selector: #selector(advanceTimer),
                              userInfo: nil,
@@ -148,7 +167,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         clockLabel.text = "\(time.minuteSecondMS)"
     }
     
-    func present() {
+    @objc func presentHappy() {
         let happyVC = HappyVC()
         happyVC.modalDelegate = self // Don't forget to set modalDelegate
         tr_presentViewController(happyVC, method: TRPresentTransitionMethod.fade, completion: {
@@ -156,11 +175,21 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         })
     }
     
+    func presentSad() {
+        let sadVC = SadVC()
+        sadVC.modalDelegate = self // Don't forget to set modalDelegate
+        tr_presentViewController(sadVC, method: TRPresentTransitionMethod.fade, completion: {
+            print("Present finished.")
+        })
+    }
+    
     @objc func buttonAction() {
-//        isFirstTime ? initTime() : stopTime()
-        present()
+        isFirstTime ? initTime() : stopTime()
+//        present()
+        
  
     }
+    
     
     func initTime() {
         isFirstTime = false
@@ -170,9 +199,14 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     
     func stopTime() {
         isFirstTime = true
-        timer?.invalidate()
         button.setTitle("START", for: .normal)
         
+        if time.minuteSecondMS == "8:88.88" {
+            presentHappy()
+        } else {
+            presentSad()
+        }
+        timer?.invalidate()
     }
 }
 
