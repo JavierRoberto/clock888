@@ -164,7 +164,12 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     
     @objc func advanceTimer() {
         time = Date().timeIntervalSinceReferenceDate - startTime
-        clockLabel.text = "\(time.minuteSecondMS)"
+        if time.secondMS == "10:00" {
+            presentSad()
+            timer?.invalidate()
+            
+        }
+        clockLabel.text = "\(time.secondMS)"
     }
     
     @objc func presentHappy() {
@@ -201,7 +206,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         isFirstTime = true
         button.setTitle("START", for: .normal)
         
-        if time.minuteSecondMS == "8:88.88" {
+        if time.secondMS == "08:88" {
             presentHappy()
         } else {
             presentSad()
@@ -211,11 +216,8 @@ class ViewController: UIViewController, ModalTransitionDelegate {
 }
 
 extension TimeInterval {
-    var minuteSecondMS: String {
-        return String(format:"%d:%02d.%02d", minute, second, millisecond)
-    }
-    var minute: Int {
-        return Int((self/60).truncatingRemainder(dividingBy: 60))
+    var secondMS: String {
+        return String(format:"%02d:%02d", second, millisecond)
     }
     var second: Int {
         return Int(self.truncatingRemainder(dividingBy: 60))
