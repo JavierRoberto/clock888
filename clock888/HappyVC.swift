@@ -11,6 +11,8 @@ import TransitionTreasury
 import TransitionAnimation
 
 class HappyVC: UIViewController {
+    
+    
 
     weak var modalDelegate: ModalViewControllerDelegate?
     let heightshareButton: CGFloat = 60

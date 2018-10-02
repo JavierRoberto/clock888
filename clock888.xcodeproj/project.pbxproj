@@ -18,6 +18,8 @@
 		A3E772D3215AB5660019AB6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CE290C2149D2B10060260F /* GoogleService-Info.plist */; };
 		A3E772D4215AB5660019AB6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2062146F67E00BEC14A /* Assets.xcassets */; };
 		A3E772D5215AB5660019AB6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2032146F67C00BEC14A /* Main.storyboard */; };
+		A3F3227A2162DAEA00407DD0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F322792162DAEA00407DD0 /* StringExtension.swift */; };
+		A3F322A42163ECDE00407DD0 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F322A32163ECDE00407DD0 /* TimeIntervalExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		A3E772AE21554E070019AB6D /* HappyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappyVC.swift; sourceTree = "<group>"; };
 		A3E772DA215AB5660019AB6D /* 8:88.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "8:88.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E772DB215AB5660019AB6D /* 8:88 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "8:88 copy-Info.plist"; path = "/Users/javierroberto/Proyectos/iOS/clock888/8:88 copy-Info.plist"; sourceTree = "<absolute>"; };
+		A3F322792162DAEA00407DD0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		A3F322A32163ECDE00407DD0 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		B80127399897A2AE228C0637 /* Pods-clock888.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clock888.debug.xcconfig"; path = "Pods/Target Support Files/Pods-clock888/Pods-clock888.debug.xcconfig"; sourceTree = "<group>"; };
 		DF661627A32F065BC0045311 /* Pods-clock888.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clock888.release.xcconfig"; path = "Pods/Target Support Files/Pods-clock888/Pods-clock888.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +108,8 @@
 				A3A02DB52154277C00090680 /* SadVC.swift */,
 				A3E772AE21554E070019AB6D /* HappyVC.swift */,
 				A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */,
+				A3F322792162DAEA00407DD0 /* StringExtension.swift */,
+				A3F322A32163ECDE00407DD0 /* TimeIntervalExtension.swift */,
 				A3C1D2032146F67C00BEC14A /* Main.storyboard */,
 				A3C1D2062146F67E00BEC14A /* Assets.xcassets */,
 				A3C1D2082146F67E00BEC14A /* LaunchScreen.storyboard */,
@@ -229,7 +235,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3E772C9215AB5660019AB6D /* ViewController.swift in Sources */,
+				A3F322A42163ECDE00407DD0 /* TimeIntervalExtension.swift in Sources */,
 				A3E772CA215AB5660019AB6D /* SadVC.swift in Sources */,
+				A3F3227A2162DAEA00407DD0 /* StringExtension.swift in Sources */,
 				A3E772CB215AB5660019AB6D /* HappyVC.swift in Sources */,
 				A3E772CC215AB5660019AB6D /* UIView+Autolayout.swift in Sources */,
 				A3E772CD215AB5660019AB6D /* AppDelegate.swift in Sources */,
@@ -262,6 +270,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -322,6 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

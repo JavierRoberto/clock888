@@ -165,7 +165,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     @objc func advanceTimer() {
         time = Date().timeIntervalSinceReferenceDate - startTime
         if time.secondMS == "10:00" {
-            presentSad()
+            presentSad(time: time)
             timer?.invalidate()
             
         }
@@ -174,14 +174,16 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     
     @objc func presentHappy() {
         let happyVC = HappyVC()
+        
         happyVC.modalDelegate = self // Don't forget to set modalDelegate
         tr_presentViewController(happyVC, method: TRPresentTransitionMethod.fade, completion: {
             print("Present finished.")
         })
     }
     
-    func presentSad() {
+    func presentSad(time: Double) {
         let sadVC = SadVC()
+        sadVC.time = time
         sadVC.modalDelegate = self // Don't forget to set modalDelegate
         tr_presentViewController(sadVC, method: TRPresentTransitionMethod.fade, completion: {
             print("Present finished.")
@@ -209,21 +211,8 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         if time.secondMS == "08:88" {
             presentHappy()
         } else {
-            presentSad()
+            presentSad(time: time)
         }
         timer?.invalidate()
     }
 }
-
-extension TimeInterval {
-    var secondMS: String {
-        return String(format:"%02d:%02d", second, millisecond)
-    }
-    var second: Int {
-        return Int(self.truncatingRemainder(dividingBy: 60))
-    }
-    var millisecond: Int {
-        return Int((self*100).truncatingRemainder(dividingBy: 100) )
-    }
-}
-

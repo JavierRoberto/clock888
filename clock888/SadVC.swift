@@ -12,6 +12,8 @@ import TransitionAnimation
 
 class SadVC: UIViewController {
 
+    var time: Double = 0
+    
     weak var modalDelegate: ModalViewControllerDelegate?
     let heightDismissButton: CGFloat = 60
     
@@ -40,10 +42,21 @@ class SadVC: UIViewController {
         return label
     }()
     
+    lazy var timeLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Your result: \(time.secondMS)"
+        label.sizeToFit()
+        label.textColor = UIColor(red: 244/255, green: 104/255, blue: 84/255, alpha: 1)
+        label.font = UIFont(name: "Hero", size: 20)
+        label.textAlignment = .center
+        return label
+    }()
+    
     lazy var descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "But you were super close.."
+        label.text = "You were close for \(time.timeTo888) sec."
         label.font = UIFont(name: "Hero", size: 20)
         label.textAlignment = .center
         label.sizeToFit()
@@ -76,23 +89,19 @@ class SadVC: UIViewController {
         view.addSubview(dismissButton)
         topView.addSubview(icon)
         topView.addSubview(noLabel)
+        topView.addSubview(timeLabel)
         topView.addSubview(descriptionLabel)
     }
-    
-    
-    
-    
+
     func setupConstraints() {
-        
-        
         topView.fit(toTop: view)
         noLabel.center(into: topView)
-        descriptionLabel.fit(horizontal: view, below: noLabel, insets: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
+        timeLabel.fit(horizontal: view, below: noLabel, insets: UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20))
+        descriptionLabel.fit(horizontal: view, below: timeLabel, insets: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
         noLabel.fit(horizontal: view, below: icon, insets: UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0))
         
         
-        NSLayoutConstraint.activate([
-            
+        NSLayoutConstraint.activate([     
             topView.bottomAnchor.constraint(equalTo: dismissButton.topAnchor, constant: heightDismissButton / 2),
             
             icon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
