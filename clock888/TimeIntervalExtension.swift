@@ -21,14 +21,9 @@ extension TimeInterval {
     }
     
     var timeTo888: String {
-        var secondsTo8 = abs(8 - second)
-        var milisecondsTo88 = 88 - millisecond
-        
-        if milisecondsTo88 < 0 {
-            secondsTo8 = secondsTo8 - 1
-            milisecondsTo88 = 100 - abs(milisecondsTo88)
-        }
-        
-        return String(format:"%02d:%02d", secondsTo8, milisecondsTo88)
+        let secondsDistance = self.distance(to: 8.88)
+        let secondsTo8 = Int(secondsDistance.truncatingRemainder(dividingBy: 60))
+        let milisecondsTo88 = Int((secondsDistance*100).truncatingRemainder(dividingBy: 100) )
+        return String(format:"%02d:%02d", abs(secondsTo8), abs(milisecondsTo88))
     }
 }

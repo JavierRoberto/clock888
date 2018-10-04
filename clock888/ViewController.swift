@@ -44,7 +44,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .clear
-        label.font = UIFont(name: "Hero", size: 70)
+        label.font = UIFont(name: "IBM Plex Mono Medium", size: 70)
         label.textAlignment = .center
         label.textColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 1)
         label.text = "0:00"
@@ -105,11 +105,9 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         setupView()
         setupConstraints()
         
-        for family: String in UIFont.familyNames
-        {
+        for family: String in UIFont.familyNames {
             print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
+            for names: String in UIFont.fontNames(forFamilyName: family) {
                 print("== \(names)")
             }
         }

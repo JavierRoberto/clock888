@@ -24,6 +24,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>IBMPlexMono-Medium.ttf</string>
+		<string>IBMPlexMono-Light.ttf</string>
 		<string>Hero.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
