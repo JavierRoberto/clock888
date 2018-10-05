@@ -21,9 +21,14 @@ extension TimeInterval {
     }
     
     var timeTo888: String {
-        let secondsDistance = self.distance(to: 8.88)
+        let timeTo888_truncate = self.truncate(places: 2)
+        let secondsDistance = timeTo888_truncate.distance(to: 8.88)
         let secondsTo8 = Int(secondsDistance.truncatingRemainder(dividingBy: 60))
         let milisecondsTo88 = Int((secondsDistance*100).truncatingRemainder(dividingBy: 100) )
         return String(format:"%02d:%02d", abs(secondsTo8), abs(milisecondsTo88))
+    }
+    
+    func truncate(places : Int)-> TimeInterval {
+        return TimeInterval(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
     }
 }

@@ -23,6 +23,7 @@
 		A3F322A621668C9900407DD0 /* IBMPlexMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3F322A521668C9900407DD0 /* IBMPlexMono-Light.ttf */; };
 		A3F322A721668DA600407DD0 /* 8:88 copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3E772DB215AB5660019AB6D /* 8:88 copy-Info.plist */; };
 		A3F322A921668E0E00407DD0 /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3F322A821668E0E00407DD0 /* IBMPlexMono-Medium.ttf */; };
+		A3F322B12167C4F400407DD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3F322AF2167C4F400407DD0 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,11 @@
 		A3F322A32163ECDE00407DD0 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		A3F322A521668C9900407DD0 /* IBMPlexMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Light.ttf"; sourceTree = "<group>"; };
 		A3F322A821668E0E00407DD0 /* IBMPlexMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Medium.ttf"; sourceTree = "<group>"; };
+		A3F322B02167C4F400407DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = clock888/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A3F322B22167C50D00407DD0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		A3F322B32167C50D00407DD0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A3F322B62167D52600407DD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = clock888/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A3F322B72167D52E00407DD0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = clock888/es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B80127399897A2AE228C0637 /* Pods-clock888.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clock888.debug.xcconfig"; path = "Pods/Target Support Files/Pods-clock888/Pods-clock888.debug.xcconfig"; sourceTree = "<group>"; };
 		DF661627A32F065BC0045311 /* Pods-clock888.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clock888.release.xcconfig"; path = "Pods/Target Support Files/Pods-clock888/Pods-clock888.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +96,7 @@
 		A3C1D1F32146F67B00BEC14A = {
 			isa = PBXGroup;
 			children = (
+				A3F322AF2167C4F400407DD0 /* Localizable.strings */,
 				A3C1D1FE2146F67C00BEC14A /* clock888 */,
 				A3C1D1FD2146F67C00BEC14A /* Products */,
 				91CD21AC948317057799A9A6 /* Pods */,
@@ -165,6 +172,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = A3C1D1F32146F67B00BEC14A;
 			productRefGroup = A3C1D1FD2146F67C00BEC14A /* Products */;
@@ -185,6 +193,7 @@
 				A3E772D2215AB5660019AB6D /* Hero.otf in Resources */,
 				A3F322A921668E0E00407DD0 /* IBMPlexMono-Medium.ttf in Resources */,
 				A3F322A621668C9900407DD0 /* IBMPlexMono-Light.ttf in Resources */,
+				A3F322B12167C4F400407DD0 /* Localizable.strings in Resources */,
 				A3E772D3215AB5660019AB6D /* GoogleService-Info.plist in Resources */,
 				A3F322A721668DA600407DD0 /* 8:88 copy-Info.plist in Resources */,
 				A3E772D4215AB5660019AB6D /* Assets.xcassets in Resources */,
@@ -261,6 +270,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A3C1D2042146F67C00BEC14A /* Base */,
+				A3F322B22167C50D00407DD0 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -269,8 +279,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				A3C1D2092146F67E00BEC14A /* Base */,
+				A3F322B32167C50D00407DD0 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A3F322AF2167C4F400407DD0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3F322B02167C4F400407DD0 /* Base */,
+				A3F322B62167D52600407DD0 /* en */,
+				A3F322B72167D52E00407DD0 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -54,7 +54,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     lazy var button: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("START", for: .normal)
+        button.setTitle("start".localized, for: .normal)
         
         button.titleLabel?.font = UIFont(name: "Hero", size: 40)
         button.setTitleColor(.white, for: .normal)
@@ -85,7 +85,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         label.textAlignment = .center
         label.textColor = .black
         label.numberOfLines = 0
-        label.text = "Time is going and you need to stop it at 8:88"
+        label.text = "main_description".localized
         return label
     }()
     
@@ -199,12 +199,12 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     func initTime() {
         isFirstTime = false
         startTimer()
-        button.setTitle("STOP", for: .normal)
+        button.setTitle("stop".localized, for: .normal)
     }
     
     func stopTime() {
         isFirstTime = true
-        button.setTitle("START", for: .normal)
+        button.setTitle("start".localized, for: .normal)
         
         if time.secondMS == "08:88" {
             presentHappy()

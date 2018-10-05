@@ -35,7 +35,7 @@ class SadVC: UIViewController {
     lazy var noLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Nooo!"
+        label.text = "no".localized
         label.sizeToFit()
         label.font = UIFont(name: "Hero", size: 46)
         label.textAlignment = .center
@@ -45,7 +45,7 @@ class SadVC: UIViewController {
     lazy var timeLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Your result: \(time.secondMS)"
+        label.text = "result".localized + time.secondMS
         label.sizeToFit()
         label.textColor = UIColor(red: 244/255, green: 104/255, blue: 84/255, alpha: 1)
         label.font = UIFont(name: "Hero", size: 20)
@@ -56,7 +56,7 @@ class SadVC: UIViewController {
     lazy var descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "You were close for \(time.timeTo888) sec."
+        label.text = "you_were_close".localized + time.timeTo888 + "sec".localized
         label.font = UIFont(name: "Hero", size: 20)
         label.textAlignment = .center
         label.sizeToFit()
@@ -66,7 +66,7 @@ class SadVC: UIViewController {
     lazy var dismissButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Try again", for: .normal)
+        button.setTitle("try_again".localized, for: .normal)
         
         button.titleLabel?.font = UIFont(name: "Hero", size: 26)
         button.setTitleColor(.white, for: .normal)

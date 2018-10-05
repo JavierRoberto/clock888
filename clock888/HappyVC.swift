@@ -35,7 +35,7 @@ class HappyVC: UIViewController {
     lazy var noLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Well done!"
+        label.text = "well_done".localized
         label.sizeToFit()
         label.font = UIFont(name: "Hero", size: 46)
         label.textAlignment = .center
@@ -45,7 +45,7 @@ class HappyVC: UIViewController {
     lazy var descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Just a 3% of people ..."
+        label.text = "just_people".localized
         label.font = UIFont(name: "Hero", size: 20)
         label.textAlignment = .center
         label.sizeToFit()
@@ -55,7 +55,7 @@ class HappyVC: UIViewController {
     lazy var shareButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Share your result", for: .normal)
+        button.setTitle("share_result".localized, for: .normal)
         
         button.titleLabel?.font = UIFont(name: "Hero", size: 26)
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
@@ -70,7 +70,7 @@ class HappyVC: UIViewController {
     lazy var playAgainButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Play again", for: .normal)
+        button.setTitle("play_again".localized, for: .normal)
         
         button.titleLabel?.font = UIFont(name: "Hero", size: 26)
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
