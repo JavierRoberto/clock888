@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  clock888
+
+  Created by Javier Roberto on 05/10/2018.
+  Copyright © 2018 funtastic. All rights reserved.
+*/
+
+"main_description" = "Le temps file et vous devez l'arrêter à 8h88";
+"start_key" = "START";
+"stop_key" = "STOP";
+"no_key" = "Nooo!";
+"result_key" = "Votre résultat:";
+"you_were_close" = "Vous étiez proche de ";
+"sec" = "sec.";
+"try_again" = "Réessayez";
+"well_done" = "Bien joué!";
+"just_people" = "Seulement 3% des personnes pourraient le faire";
+"share_result" = "Partagez votre résultat";
+"play_again" = "Relire";

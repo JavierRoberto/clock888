@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  clock888
+
+  Created by Javier Roberto on 05/10/2018.
+  Copyright © 2018 funtastic. All rights reserved.
+*/
+
+"main_description"="時間到了，你需要在8:88停止它";
+"start_key"="START";
+"stop_key"="停止";
+"no_key"="Nooo！";
+"result_key"="你的結果：";
+"you_were_close"="你很接近 ";
+"sec"="秒";
+"try_again"="再試一次";
+"well_done"="幹得好！";
+"just_people"="只有3％的人可以做到這一點";
+"share_result"="分享您的結果";
+"play_again"="再次播放";

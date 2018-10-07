@@ -54,7 +54,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     lazy var button: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("start".localized, for: .normal)
+        button.setTitle("start_key".localized, for: .normal)
         
         button.titleLabel?.font = UIFont(name: "Hero", size: 40)
         button.setTitleColor(.white, for: .normal)
@@ -68,7 +68,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("go to Happy", for: .normal)
-        
+        button.isHidden = true
         button.titleLabel?.font = UIFont(name: "Hero", size: 20)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(presentHappy), for: UIControl.Event.touchUpInside)
@@ -92,7 +92,9 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     lazy var bannerView: GADBannerView = {
         let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-7419924566886338/3812899263"
+        //  REAL:ca-app-pub-7419924566886338/3812899263
+        //  TESTING "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         return bannerView
@@ -199,12 +201,12 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     func initTime() {
         isFirstTime = false
         startTimer()
-        button.setTitle("stop".localized, for: .normal)
+        button.setTitle("stop_key".localized, for: .normal)
     }
     
     func stopTime() {
         isFirstTime = true
-        button.setTitle("start".localized, for: .normal)
+        button.setTitle("start_key".localized, for: .normal)
         
         if time.secondMS == "08:88" {
             presentHappy()

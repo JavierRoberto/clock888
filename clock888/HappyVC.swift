@@ -138,7 +138,7 @@ class HappyVC: UIViewController {
         
         let textToShare = "Check out my app"
         
-        if let myWebsite = URL(string: "http://itunes.apple.com/app/idXXXXXXXXX") {//Enter link to your app here
+        if let myWebsite = URL(string: "https://itunes.apple.com/us/app/whatsapp-messenger/id1437303312?mt=8") {//Enter link to your app here
             let objectsToShare = [textToShare, myWebsite, image ?? #imageLiteral(resourceName: "app-logo")] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             

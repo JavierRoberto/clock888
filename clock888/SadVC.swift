@@ -35,7 +35,7 @@ class SadVC: UIViewController {
     lazy var noLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "no".localized
+        label.text = "no_key".localized
         label.sizeToFit()
         label.font = UIFont(name: "Hero", size: 46)
         label.textAlignment = .center
@@ -45,7 +45,7 @@ class SadVC: UIViewController {
     lazy var timeLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "result".localized + time.secondMS
+        label.text = "result_key".localized + time.secondMS
         label.sizeToFit()
         label.textColor = UIColor(red: 244/255, green: 104/255, blue: 84/255, alpha: 1)
         label.font = UIFont(name: "Hero", size: 20)

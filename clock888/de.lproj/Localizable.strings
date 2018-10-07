@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  clock888
+
+  Created by Javier Roberto on 05/10/2018.
+  Copyright © 2018 funtastic. All rights reserved.
+*/
+
+"main_description" = "Die Zeit läuft und du musst sie um 8:88 stoppen";
+"start_key" = "START";
+"stop_key" = "STOP";
+"no_key" = "Nein!";
+"result_key" = "Ihr Ergebnis:";
+"you_were_close" = "Du warst nah dran ";
+"sec" = "sek.";
+"try_again" = "Erneut versuchen";
+"well_done" = "Gut gemacht!";
+"just_people" = "Nur 3% der Leute könnten es tun";
+"share_result" = "Teile dein Ergebnis";
+"play_again" = "Wieder abspielen";

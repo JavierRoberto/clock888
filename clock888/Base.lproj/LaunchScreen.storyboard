@@ -39,19 +39,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJr-uT-h9p">
                                         <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIN-Aq-LD3">
-                                                <rect key="frame" x="173" y="10" width="29" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="nIN-Aq-LD3" firstAttribute="centerX" secondItem="XJr-uT-h9p" secondAttribute="centerX" id="1ww-IK-IMZ"/>
-                                            <constraint firstItem="nIN-Aq-LD3" firstAttribute="top" secondItem="XJr-uT-h9p" secondAttribute="top" constant="10" id="DSB-tE-JLL"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>

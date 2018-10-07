@@ -1,16 +1,8 @@
-/* 
-  Localizable.strings
-  clock888
-
-  Created by Javier Roberto on 05/10/2018.
-  Copyright © 2018 funtastic. All rights reserved.
-*/
-
 "main_description" = "Time is going and you need to stop it at 8:88";
-"start" = "START";
-"stop" = "STOP";
-"no" = "Nooo!";
-"result" = "Your result: ";
+"start_key" = "START";
+"stop_key" = "STOP";
+"no_key" = "Nooo!";
+"result_key" = "Your result: ";
 "you_were_close" = "You were close for ";
 "sec" = " sec.";
 "try_again" = "Try again";

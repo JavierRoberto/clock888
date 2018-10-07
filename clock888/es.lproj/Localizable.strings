@@ -6,4 +6,15 @@
   Copyright © 2018 funtastic. All rights reserved.
 */
 
-"main_description" = "spanish";
+"main_description" = "El tiempo se va y debes detenerlo en 8:88";
+"start_key" = "START";
+"stop_key" = "STOP";
+"no_key" = "Nooo!";
+"result_key" = "Tu resultado: ";
+"you_were_close" = "Estuviste cerca :";
+"sec" = "sec.";
+"try_again" = "Inténtalo de nuevo";
+"well_done" = "¡Bien hecho!";
+"just_people" = "Solo un 3% de las personas lo consiugen";
+"share_result" = "Comparte tu resultado";
+"play_again" = "Jugar de nuevo";

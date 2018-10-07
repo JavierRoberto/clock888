@@ -12,7 +12,6 @@
 		A3E772CB215AB5660019AB6D /* HappyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E772AE21554E070019AB6D /* HappyVC.swift */; };
 		A3E772CC215AB5660019AB6D /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */; };
 		A3E772CD215AB5660019AB6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */; };
-		A3E772CF215AB5660019AB6D /* Pods_clock888.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57714EF598B3B58890830BEE /* Pods_clock888.framework */; };
 		A3E772D1215AB5660019AB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2082146F67E00BEC14A /* LaunchScreen.storyboard */; };
 		A3E772D2215AB5660019AB6D /* Hero.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3B5FA152152BFF500E3DDCA /* Hero.otf */; };
 		A3E772D3215AB5660019AB6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CE290C2149D2B10060260F /* GoogleService-Info.plist */; };
@@ -24,10 +23,12 @@
 		A3F322A721668DA600407DD0 /* 8:88 copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3E772DB215AB5660019AB6D /* 8:88 copy-Info.plist */; };
 		A3F322A921668E0E00407DD0 /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3F322A821668E0E00407DD0 /* IBMPlexMono-Medium.ttf */; };
 		A3F322B12167C4F400407DD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3F322AF2167C4F400407DD0 /* Localizable.strings */; };
+		F9A584108891DFC6507B557C /* Pods_8_88.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAC4E40FC7BF716B99587AF /* Pods_8_88.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		57714EF598B3B58890830BEE /* Pods_clock888.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clock888.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DAC4E40FC7BF716B99587AF /* Pods_8_88.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_8_88.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41431887E49C8DE7E1F6E6E7 /* Pods-8:88.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8:88.debug.xcconfig"; path = "Pods/Target Support Files/Pods-8:88/Pods-8:88.debug.xcconfig"; sourceTree = "<group>"; };
 		A3A02DB52154277C00090680 /* SadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SadVC.swift; sourceTree = "<group>"; };
 		A3B5FA152152BFF500E3DDCA /* Hero.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hero.otf; sourceTree = "<group>"; };
 		A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,8 +51,11 @@
 		A3F322B32167C50D00407DD0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A3F322B62167D52600407DD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = clock888/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3F322B72167D52E00407DD0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = clock888/es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B80127399897A2AE228C0637 /* Pods-clock888.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clock888.debug.xcconfig"; path = "Pods/Target Support Files/Pods-clock888/Pods-clock888.debug.xcconfig"; sourceTree = "<group>"; };
-		DF661627A32F065BC0045311 /* Pods-clock888.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clock888.release.xcconfig"; path = "Pods/Target Support Files/Pods-clock888/Pods-clock888.release.xcconfig"; sourceTree = "<group>"; };
+		A3F322B82168BE9400407DD0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = clock888/de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A3F322B92168BEEE00407DD0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "clock888/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A3F322BA2168BFBC00407DD0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = clock888/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A3F322BB2168BFE700407DD0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = clock888/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B51410BFD007C4BA7F55AE5D /* Pods-8:88.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8:88.release.xcconfig"; path = "Pods/Target Support Files/Pods-8:88/Pods-8:88.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3E772CF215AB5660019AB6D /* Pods_clock888.framework in Frameworks */,
+				F9A584108891DFC6507B557C /* Pods_8_88.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +73,7 @@
 		64B99AE7FEFA5ECC7B05B232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				57714EF598B3B58890830BEE /* Pods_clock888.framework */,
+				2DAC4E40FC7BF716B99587AF /* Pods_8_88.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -77,8 +81,8 @@
 		91CD21AC948317057799A9A6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B80127399897A2AE228C0637 /* Pods-clock888.debug.xcconfig */,
-				DF661627A32F065BC0045311 /* Pods-clock888.release.xcconfig */,
+				41431887E49C8DE7E1F6E6E7 /* Pods-8:88.debug.xcconfig */,
+				B51410BFD007C4BA7F55AE5D /* Pods-8:88.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -173,6 +177,10 @@
 				en,
 				Base,
 				es,
+				de,
+				"zh-Hant",
+				fr,
+				ru,
 			);
 			mainGroup = A3C1D1F32146F67B00BEC14A;
 			productRefGroup = A3C1D1FD2146F67C00BEC14A /* Products */;
@@ -215,7 +223,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-clock888-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-8:88-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -228,7 +236,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-clock888/Pods-clock888-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-8:88/Pods-8:88-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionAnimation/TransitionAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionTreasury/TransitionTreasury.framework",
@@ -243,7 +251,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-clock888/Pods-clock888-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-8:88/Pods-8:88-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -290,6 +298,10 @@
 				A3F322B02167C4F400407DD0 /* Base */,
 				A3F322B62167D52600407DD0 /* en */,
 				A3F322B72167D52E00407DD0 /* es */,
+				A3F322B82168BE9400407DD0 /* de */,
+				A3F322B92168BEEE00407DD0 /* zh-Hant */,
+				A3F322BA2168BFBC00407DD0 /* fr */,
+				A3F322BB2168BFE700407DD0 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -415,11 +427,12 @@
 		};
 		A3E772D8215AB5660019AB6D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B80127399897A2AE228C0637 /* Pods-clock888.debug.xcconfig */;
+			baseConfigurationReference = 41431887E49C8DE7E1F6E6E7 /* Pods-8:88.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEVELOPMENT_TEAM = A894P23KUL;
 				INFOPLIST_FILE = "8:88 copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -432,16 +445,18 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		A3E772D9215AB5660019AB6D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF661627A32F065BC0045311 /* Pods-clock888.release.xcconfig */;
+			baseConfigurationReference = B51410BFD007C4BA7F55AE5D /* Pods-8:88.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEVELOPMENT_TEAM = A894P23KUL;
 				INFOPLIST_FILE = "8:88 copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -454,6 +469,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
