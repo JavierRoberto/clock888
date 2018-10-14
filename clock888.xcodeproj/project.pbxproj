@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3AFB59B2172A45D0054B054 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFB59A2172A45D0054B054 /* ResultVC.swift */; };
+		A3AFB59D2172A4AE0054B054 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFB59C2172A4AE0054B054 /* ResultCell.swift */; };
+		A3AFB59F2173B5620054B054 /* ResultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFB59E2173B5620054B054 /* ResultVM.swift */; };
 		A3E772C9215AB5660019AB6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D2012146F67C00BEC14A /* ViewController.swift */; };
 		A3E772CA215AB5660019AB6D /* SadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A02DB52154277C00090680 /* SadVC.swift */; };
 		A3E772CB215AB5660019AB6D /* HappyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E772AE21554E070019AB6D /* HappyVC.swift */; };
@@ -30,6 +33,9 @@
 		2DAC4E40FC7BF716B99587AF /* Pods_8_88.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_8_88.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41431887E49C8DE7E1F6E6E7 /* Pods-8:88.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8:88.debug.xcconfig"; path = "Pods/Target Support Files/Pods-8:88/Pods-8:88.debug.xcconfig"; sourceTree = "<group>"; };
 		A3A02DB52154277C00090680 /* SadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SadVC.swift; sourceTree = "<group>"; };
+		A3AFB59A2172A45D0054B054 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		A3AFB59C2172A4AE0054B054 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		A3AFB59E2173B5620054B054 /* ResultVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVM.swift; sourceTree = "<group>"; };
 		A3B5FA152152BFF500E3DDCA /* Hero.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hero.otf; sourceTree = "<group>"; };
 		A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C1D2012146F67C00BEC14A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +103,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A3AFB5A02173B56F0054B054 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				A3AFB59A2172A45D0054B054 /* ResultVC.swift */,
+				A3AFB59E2173B5620054B054 /* ResultVM.swift */,
+				A3AFB59C2172A4AE0054B054 /* ResultCell.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		A3C1D1F32146F67B00BEC14A = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +141,7 @@
 				A3C1D2012146F67C00BEC14A /* ViewController.swift */,
 				A3A02DB52154277C00090680 /* SadVC.swift */,
 				A3E772AE21554E070019AB6D /* HappyVC.swift */,
+				A3AFB5A02173B56F0054B054 /* Result */,
 				A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */,
 				A3F322792162DAEA00407DD0 /* StringExtension.swift */,
 				A3F322A32163ECDE00407DD0 /* TimeIntervalExtension.swift */,
@@ -240,6 +257,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionAnimation/TransitionAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionTreasury/TransitionTreasury.framework",
+				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -247,6 +265,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionTreasury.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,9 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3E772C9215AB5660019AB6D /* ViewController.swift in Sources */,
+				A3AFB59B2172A45D0054B054 /* ResultVC.swift in Sources */,
 				A3F322A42163ECDE00407DD0 /* TimeIntervalExtension.swift in Sources */,
 				A3E772CA215AB5660019AB6D /* SadVC.swift in Sources */,
 				A3F3227A2162DAEA00407DD0 /* StringExtension.swift in Sources */,
+				A3AFB59F2173B5620054B054 /* ResultVM.swift in Sources */,
+				A3AFB59D2172A4AE0054B054 /* ResultCell.swift in Sources */,
 				A3E772CB215AB5660019AB6D /* HappyVC.swift in Sources */,
 				A3E772CC215AB5660019AB6D /* UIView+Autolayout.swift in Sources */,
 				A3E772CD215AB5660019AB6D /* AppDelegate.swift in Sources */,
@@ -444,7 +466,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -468,7 +490,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

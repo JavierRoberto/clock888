@@ -10,4 +10,5 @@ target '8:88' do
     pod 'Firebase/AdMob'
     pod 'TransitionTreasury', '~> 5.0'
     pod 'TransitionAnimation', '~> 5.0'
+    pod "ViewAnimator"
 end

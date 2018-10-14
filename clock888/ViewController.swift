@@ -18,6 +18,14 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     var timer: Timer?
     var isFirstTime: Bool = true
     
+    
+    lazy var resultButton: UIBarButtonItem = {
+        let button = UIButton(frame: .zero)
+        button.setImage(UIImage(named: "share"), for: .normal)
+        button.addTarget(self, action: #selector(presentResult), for: .touchUpInside)
+        return UIBarButtonItem(customView: button)
+    }()
+    
     lazy var stack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [topView, bottomView])
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -68,10 +76,10 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("go to Happy", for: .normal)
-        button.isHidden = true
+        button.isHidden = false
         button.titleLabel?.font = UIFont(name: "Hero", size: 20)
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(presentHappy), for: UIControl.Event.touchUpInside)
+        button.addTarget(self, action: #selector(presentResult), for: UIControl.Event.touchUpInside)
         button.backgroundColor = .red
 //        button.setBackgroundImage(UIImage(named: "backgroundButton"), for: .normal)
         return button
@@ -90,15 +98,27 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     }()
     
     lazy var bannerView: GADBannerView = {
-        let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        bannerView.adUnitID = "ca-app-pub-7419924566886338/3812899263"
-        //  REAL:ca-app-pub-7419924566886338/3812899263
-        //  TESTING "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        return bannerView
+        let banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        banner.translatesAutoresizingMaskIntoConstraints = false
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        //        "ca-app-pub-7177564470506351/9126892708" --> token bueno
+        //        "ca-app-pub-3940256099942544/2934735716" --> token de prueba
+        banner.rootViewController = self
+        return banner
     }()
+    
+//    lazy var bannerView: GADBannerView = {
+//        let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+//        bannerView.translatesAutoresizingMaskIntoConstraints = false
+//        bannerView.adUnitID = "ca-app-pub-7419924566886338/3812899263"
+//        bannerView.delegate = self
+//        //  REAL:ca-app-pub-7419924566886338/3812899263
+//        //  TESTING "ca-app-pub-3940256099942544/2934735716"
+//        bannerView.rootViewController = self
+//        bannerView.load(GADRequest())
+//        return bannerView
+//    }()
     
     var tr_presentTransition: TRViewControllerTransitionDelegate?
     
@@ -107,12 +127,17 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         setupView()
         setupConstraints()
         
-        for family: String in UIFont.familyNames {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family) {
-                print("== \(names)")
-            }
-        }
+        
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
+        
+        
+//        for family: String in UIFont.familyNames {
+//            print("\(family)")
+//            for names: String in UIFont.fontNames(forFamilyName: family) {
+//                print("== \(names)")
+//            }
+//        }
     }
     
     func setupView() {
@@ -122,6 +147,9 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         stack.addSubview(helpLabel)
         view.addSubview(bannerView)
         view.addSubview(goToHappyButton)
+        
+        navigationItem.setRightBarButton(resultButton, animated: true)
+        
     }
     
     func setupConstraints() {
@@ -172,6 +200,15 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         clockLabel.text = "\(time.secondMS)"
     }
     
+    @objc func presentResult() {
+        let resultVC = ResultVC()
+        navigationController?.pushViewController(resultVC, animated: true)
+//        resultVC.modalDelegate = self // Don't forget to set modalDelegate
+//        tr_presentViewController(resultVC, method: TRPresentTransitionMethod.fade, completion: {
+//            print("Present finished.")
+//        })
+    }
+    
     @objc func presentHappy() {
         let happyVC = HappyVC()
         
@@ -214,5 +251,42 @@ class ViewController: UIViewController, ModalTransitionDelegate {
             presentSad(time: time)
         }
         timer?.invalidate()
+    }
+    
+    
+}
+
+extension ViewController: GADBannerViewDelegate {
+    /// Tells the delegate an ad request loaded an ad.
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("adViewDidReceiveAd")
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that a full-screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("adViewWillPresentScreen")
+    }
+    
+    /// Tells the delegate that the full-screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewWillDismissScreen")
+    }
+    
+    /// Tells the delegate that the full-screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewDidDismissScreen")
+    }
+    
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        print("adViewWillLeaveApplication")
     }
 }
