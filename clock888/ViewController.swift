@@ -10,9 +10,11 @@ import UIKit
 import GoogleMobileAds
 import TransitionTreasury
 import TransitionAnimation
+import CoreData
 
 class ViewController: UIViewController, ModalTransitionDelegate {
 
+    
     var startTime: Double = 0
     var time: Double = 0
     var timer: Timer?
@@ -251,8 +253,32 @@ class ViewController: UIViewController, ModalTransitionDelegate {
             presentSad(time: time)
         }
         timer?.invalidate()
+        save(time: time.secondMS)
+        
     }
     
+    func save(time: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        // 1
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        // 2
+        let entity = NSEntityDescription.entity(forEntityName: "Result", in: managedContext)!
+        
+        let result = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        // 3
+        result.setValue(time, forKeyPath: "time")
+        
+        // 4
+        do {
+            try managedContext.save()
+//            result.append(time)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
     
 }
 

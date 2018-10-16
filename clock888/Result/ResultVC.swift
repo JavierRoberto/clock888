@@ -8,9 +8,11 @@
 
 import UIKit
 import TransitionTreasury
+import CoreData
 
 class ResultVC: UIViewController {
 
+    var resultArray: [NSManagedObject] = []
     weak var modalDelegate: ModalViewControllerDelegate?
     
     lazy var testButton: UIBarButtonItem = {
@@ -27,7 +29,9 @@ class ResultVC: UIViewController {
         table.dataSource = self
         table.register(ResultCell.self, forCellReuseIdentifier: "cell")
         table.separatorStyle = .none
-        table.backgroundColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 0.1)
+//        table.backgroundColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 0.1)
+        table.backgroundColor = .white
+        table.isHidden = true
         return table
     }()
     
@@ -35,6 +39,23 @@ class ResultVC: UIViewController {
         self.view.backgroundColor = .white
         setupView()
         setupConstraints()
+        
+        
+        //1
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Result")
+        
+        //3
+        do {
+            resultArray = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+ 
 
         let resultVM = ResultVM()
         resultVM.requestInitialState(tableView)
@@ -63,16 +84,17 @@ extension ResultVC: UITableViewDelegate {
 
 extension ResultVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return resultArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ResultCell
         
-        cell.timeLabel.text = "time"
         cell.dateLabel.text = "date"
-        
+        let result = resultArray[indexPath.row]
+        cell.timeLabel.text =
+            result.value(forKeyPath: "time") as? String
         return cell
     }
 }

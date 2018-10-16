@@ -16,24 +16,25 @@ class ResultCell: UITableViewCell {
         label.textColor = .black
         label.text = "ddfffff"
         label.sizeToFit()
-        label.backgroundColor = .white
+        label.font = UIFont(name: "Hero", size: 20)
         return label
     }()
     
     lazy var dateLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Hero", size: 20)
         return label
     }()
     
     lazy var container: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 254/255, green: 240/255, blue: 236/255, alpha: 1)
         view.layer.cornerRadius = 8
         view.layer.shadowColor = UIColor.gray.cgColor
-        view.layer.shadowOffset = CGSize(width: 2, height: 2)
-        view.layer.shadowRadius = 4
+        view.layer.shadowOffset = CGSize(width: 1, height: 1)
+        view.layer.shadowRadius = 2
         view.layer.shadowOpacity = 1
         view.layer.shouldRasterize = true
 //        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
@@ -41,7 +42,7 @@ class ResultCell: UITableViewCell {
     }()
     
     lazy var stack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [timeLabel, dateLabel])
+        let stack = UIStackView(arrangedSubviews: [timeLabel/*, dateLabel*/])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.alignment = .center
@@ -60,7 +61,7 @@ class ResultCell: UITableViewCell {
     }
     
     func setupView() {
-        contentView.backgroundColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 0.1)
+        contentView.backgroundColor = .white
         contentView.addSubview(container)
         container.addSubview(stack)
         

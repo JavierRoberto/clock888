@@ -16,6 +16,7 @@ class ResultVM: NSObject {
         
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            tableView.isHidden = false
             let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
             let cells = tableView.visibleCells(in: 0)
             UIView.animate(views: cells, animations: animations)
