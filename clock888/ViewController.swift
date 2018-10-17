@@ -102,7 +102,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     lazy var bannerView: GADBannerView = {
         let banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         banner.translatesAutoresizingMaskIntoConstraints = false
-        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        banner.adUnitID = "ca-app-pub-7177564470506351/9126892708"
         
         //        "ca-app-pub-7177564470506351/9126892708" --> token bueno
         //        "ca-app-pub-3940256099942544/2934735716" --> token de prueba
@@ -151,7 +151,6 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         view.addSubview(goToHappyButton)
         
         navigationItem.setRightBarButton(resultButton, animated: true)
-        
     }
     
     func setupConstraints() {
@@ -197,6 +196,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         if time.secondMS == "10:00" {
             presentSad(time: time)
             timer?.invalidate()
+            save(time: time.secondMS)
             
         }
         clockLabel.text = "\(time.secondMS)"
@@ -259,19 +259,11 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     
     func save(time: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        // 1
         let managedContext = appDelegate.persistentContainer.viewContext
-        
-        // 2
         let entity = NSEntityDescription.entity(forEntityName: "Result", in: managedContext)!
-        
         let result = NSManagedObject(entity: entity, insertInto: managedContext)
-        
-        // 3
-        result.setValue(time, forKeyPath: "time")
-        
-        // 4
+        result.setValue(time, forKeyPath: "timeResult")
+        result.setValue(Date(), forKeyPath: "timeStamp")
         do {
             try managedContext.save()
 //            result.append(time)

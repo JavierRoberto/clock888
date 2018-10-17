@@ -25,7 +25,6 @@ class ResultVC: UIViewController {
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero)
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.delegate = self
         table.dataSource = self
         table.register(ResultCell.self, forCellReuseIdentifier: "cell")
         table.separatorStyle = .none
@@ -36,26 +35,32 @@ class ResultVC: UIViewController {
     }()
     
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 1)s
+        self.navigationItem.title = "last_10".localized
         self.view.backgroundColor = .white
         setupView()
         setupConstraints()
         
-        
-        //1
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
         let managedContext = appDelegate.persistentContainer.viewContext
-        
-        //2
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Result")
-        
-        //3
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timeStamp", ascending: false)]
         do {
             resultArray = try managedContext.fetch(fetchRequest)
+            if resultArray.count > 10 {
+                for i in 10...resultArray.count - 1 {
+                    managedContext.delete(resultArray[i])
+                }
+                do {
+                    try managedContext.save() // <- remember to put this :)
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+                resultArray = Array(resultArray.prefix(10))
+            }
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
- 
 
         let resultVM = ResultVM()
         resultVM.requestInitialState(tableView)
@@ -78,10 +83,6 @@ class ResultVC: UIViewController {
     }
 }
 
-extension ResultVC: UITableViewDelegate {
-    
-}
-
 extension ResultVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultArray.count
@@ -91,10 +92,9 @@ extension ResultVC: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ResultCell
         
-        cell.dateLabel.text = "date"
         let result = resultArray[indexPath.row]
-        cell.timeLabel.text =
-            result.value(forKeyPath: "time") as? String
+        cell.dateLabel.text = (result.value(forKeyPath: "timeStamp") as? Date)?.description
+        cell.timeLabel.text = result.value(forKeyPath: "timeResult") as? String
         return cell
     }
 }

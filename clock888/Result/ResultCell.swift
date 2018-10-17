@@ -24,6 +24,8 @@ class ResultCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Hero", size: 20)
+        label.textColor = .black
+        label.sizeToFit()
         return label
     }()
     
