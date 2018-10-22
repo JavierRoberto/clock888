@@ -74,6 +74,7 @@ class SadVC: UIViewController {
         button.setImage(UIImage(named: "play"), for: .normal)
         button.addTarget(self, action: #selector(dismissView), for: UIControl.Event.touchUpInside)
         button.layer.cornerRadius = 32
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         return button
     }()
     

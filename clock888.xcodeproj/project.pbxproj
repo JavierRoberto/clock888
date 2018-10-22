@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A35FE4CD217E4D0E0052E56C /* Anonymous_Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A35FE4CC217E4D0E0052E56C /* Anonymous_Pro.ttf */; };
+		A35FE4CF217E4F580052E56C /* LevelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35FE4CE217E4F580052E56C /* LevelsVC.swift */; };
 		A3AFB59B2172A45D0054B054 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFB59A2172A45D0054B054 /* ResultVC.swift */; };
 		A3AFB59D2172A4AE0054B054 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFB59C2172A4AE0054B054 /* ResultCell.swift */; };
 		A3AFB59F2173B5620054B054 /* ResultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFB59E2173B5620054B054 /* ResultVM.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		2DAC4E40FC7BF716B99587AF /* Pods_8_88.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_8_88.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41431887E49C8DE7E1F6E6E7 /* Pods-8:88.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8:88.debug.xcconfig"; path = "Pods/Target Support Files/Pods-8:88/Pods-8:88.debug.xcconfig"; sourceTree = "<group>"; };
+		A35FE4CC217E4D0E0052E56C /* Anonymous_Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Anonymous_Pro.ttf; sourceTree = "<group>"; };
+		A35FE4CE217E4F580052E56C /* LevelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsVC.swift; sourceTree = "<group>"; };
 		A3A02DB52154277C00090680 /* SadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SadVC.swift; sourceTree = "<group>"; };
 		A3AFB59A2172A45D0054B054 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		A3AFB59C2172A4AE0054B054 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 		A33112EE215067E7001797C3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A35FE4CC217E4D0E0052E56C /* Anonymous_Pro.ttf */,
 				A3F322A821668E0E00407DD0 /* IBMPlexMono-Medium.ttf */,
 				A3B5FA152152BFF500E3DDCA /* Hero.otf */,
 				A3F322A521668C9900407DD0 /* IBMPlexMono-Light.ttf */,
@@ -142,6 +147,7 @@
 				A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */,
 				A33112EE215067E7001797C3 /* Resources */,
 				A3C1D2012146F67C00BEC14A /* ViewController.swift */,
+				A35FE4CE217E4F580052E56C /* LevelsVC.swift */,
 				A3A02DB52154277C00090680 /* SadVC.swift */,
 				A3E772AE21554E070019AB6D /* HappyVC.swift */,
 				A3AFB5A02173B56F0054B054 /* Result */,
@@ -223,6 +229,7 @@
 				A3F322A621668C9900407DD0 /* IBMPlexMono-Light.ttf in Resources */,
 				A3F322B12167C4F400407DD0 /* Localizable.strings in Resources */,
 				A3E772D3215AB5660019AB6D /* GoogleService-Info.plist in Resources */,
+				A35FE4CD217E4D0E0052E56C /* Anonymous_Pro.ttf in Resources */,
 				A3F322A721668DA600407DD0 /* 8:88 copy-Info.plist in Resources */,
 				A3E772D4215AB5660019AB6D /* Assets.xcassets in Resources */,
 				A3E772D5215AB5660019AB6D /* Main.storyboard in Resources */,
@@ -292,6 +299,7 @@
 				A3AFB59F2173B5620054B054 /* ResultVM.swift in Sources */,
 				A3AFB59D2172A4AE0054B054 /* ResultCell.swift in Sources */,
 				A3E772CB215AB5660019AB6D /* HappyVC.swift in Sources */,
+				A35FE4CF217E4F580052E56C /* LevelsVC.swift in Sources */,
 				A3E772CC215AB5660019AB6D /* UIView+Autolayout.swift in Sources */,
 				A3E772CD215AB5660019AB6D /* AppDelegate.swift in Sources */,
 			);

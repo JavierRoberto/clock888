@@ -12,8 +12,13 @@ import TransitionTreasury
 import TransitionAnimation
 import CoreData
 
+protocol ViewControllerDelegate {
+    func pass(level: Level)
+}
+
 class ViewController: UIViewController, ModalTransitionDelegate {
 
+    var level: Level = .bronze
     
     var startTime: Double = 0
     var time: Double = 0
@@ -21,9 +26,16 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     var isFirstTime: Bool = true
     
     
+    lazy var levelButton: UIBarButtonItem = {
+        let button = UIButton(frame: .zero)
+        button.setImage(UIImage(named: "podium"), for: .normal)
+        button.addTarget(self, action: #selector(presentLevels), for: .touchUpInside)
+        return UIBarButtonItem(customView: button)
+    }()
+    
     lazy var resultButton: UIBarButtonItem = {
         let button = UIButton(frame: .zero)
-        button.setImage(UIImage(named: "share"), for: .normal)
+        button.setImage(UIImage(named: "podium"), for: .normal)
         button.addTarget(self, action: #selector(presentResult), for: .touchUpInside)
         return UIBarButtonItem(customView: button)
     }()
@@ -54,7 +66,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .clear
-        label.font = UIFont(name: "IBM Plex Mono Medium", size: 70)
+        label.font = UIFont(name: "Anonymous Pro", size: 70)
         label.textAlignment = .center
         label.textColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 1)
         label.text = "0:00"
@@ -81,7 +93,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         button.isHidden = false
         button.titleLabel?.font = UIFont(name: "Hero", size: 20)
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(presentResult), for: UIControl.Event.touchUpInside)
+        button.addTarget(self, action: #selector(presentHappy), for: UIControl.Event.touchUpInside)
         button.backgroundColor = .red
 //        button.setBackgroundImage(UIImage(named: "backgroundButton"), for: .normal)
         return button
@@ -102,7 +114,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     lazy var bannerView: GADBannerView = {
         let banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         banner.translatesAutoresizingMaskIntoConstraints = false
-        banner.adUnitID = "ca-app-pub-7177564470506351/9126892708"
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         
         //        "ca-app-pub-7177564470506351/9126892708" --> token bueno
         //        "ca-app-pub-3940256099942544/2934735716" --> token de prueba
@@ -126,6 +138,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
         setupConstraints()
         
@@ -134,12 +147,12 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         bannerView.load(GADRequest())
         
         
-//        for family: String in UIFont.familyNames {
-//            print("\(family)")
-//            for names: String in UIFont.fontNames(forFamilyName: family) {
-//                print("== \(names)")
-//            }
-//        }
+        for family: String in UIFont.familyNames {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family) {
+                print("== \(names)")
+            }
+        }
     }
     
     func setupView() {
@@ -150,6 +163,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         view.addSubview(bannerView)
         view.addSubview(goToHappyButton)
         
+        navigationItem.setLeftBarButton(levelButton, animated: true)
         navigationItem.setRightBarButton(resultButton, animated: true)
     }
     
@@ -175,7 +189,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
             bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             
-            goToHappyButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            goToHappyButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             goToHappyButton.heightAnchor.constraint(equalToConstant: 40),
             goToHappyButton.widthAnchor.constraint(equalToConstant: 200),
             goToHappyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -201,6 +215,21 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         }
         clockLabel.text = "\(time.secondMS)"
     }
+    
+    
+    @objc func presentLevels() {
+        let levelsVC = LevelsVC()
+        levelsVC.delegate = self
+        levelsVC.modalTransitionStyle = .crossDissolve
+        levelsVC.modalPresentationStyle = .overCurrentContext
+        present(levelsVC, animated: true, completion: nil)
+//        navigationController?.pushViewController(levelsVC, animated: true)
+        //        resultVC.modalDelegate = self // Don't forget to set modalDelegate
+        //        tr_presentViewController(resultVC, method: TRPresentTransitionMethod.fade, completion: {
+        //            print("Present finished.")
+        //        })
+    }
+    
     
     @objc func presentResult() {
         let resultVC = ResultVC()
@@ -307,4 +336,12 @@ extension ViewController: GADBannerViewDelegate {
     func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
         print("adViewWillLeaveApplication")
     }
+}
+
+extension ViewController: ViewControllerDelegate {
+    func pass(level: Level) {
+        self.level = level
+    }
+    
+    
 }

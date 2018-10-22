@@ -61,7 +61,7 @@ class HappyVC: UIViewController {
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 1)
-        button.setImage(UIImage(named: "Share"), for: .normal)
+        button.setImage(UIImage(named: "share"), for: .normal)
         button.addTarget(self, action: #selector(share(sender:)), for: UIControl.Event.touchUpInside)
         button.layer.cornerRadius = 32
         return button
