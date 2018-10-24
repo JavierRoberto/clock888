@@ -36,7 +36,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     lazy var resultButton: UIBarButtonItem = {
         let button = UIButton(frame: .zero)
         button.setImage(UIImage(named: "podium"), for: .normal)
-        button.addTarget(self, action: #selector(presentResult), for: .touchUpInside)
+        button.addTarget(self, action: #selector(presentTabBarController), for: .touchUpInside)
         return UIBarButtonItem(customView: button)
     }()
     
@@ -122,18 +122,6 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         return banner
     }()
     
-//    lazy var bannerView: GADBannerView = {
-//        let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-//        bannerView.translatesAutoresizingMaskIntoConstraints = false
-//        bannerView.adUnitID = "ca-app-pub-7419924566886338/3812899263"
-//        bannerView.delegate = self
-//        //  REAL:ca-app-pub-7419924566886338/3812899263
-//        //  TESTING "ca-app-pub-3940256099942544/2934735716"
-//        bannerView.rootViewController = self
-//        bannerView.load(GADRequest())
-//        return bannerView
-//    }()
-    
     var tr_presentTransition: TRViewControllerTransitionDelegate?
     
     override func viewDidLoad() {
@@ -206,12 +194,12 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     }
     
     @objc func advanceTimer() {
-        time = Date().timeIntervalSinceReferenceDate - startTime
+        print("Level: \(self.level)")
+        time = (Date().timeIntervalSinceReferenceDate - startTime) * Double(level.rawValue)
         if time.secondMS == "10:00" {
             presentSad(time: time)
             timer?.invalidate()
             save(time: time.secondMS)
-            
         }
         clockLabel.text = "\(time.secondMS)"
     }
@@ -223,17 +211,13 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         levelsVC.modalTransitionStyle = .crossDissolve
         levelsVC.modalPresentationStyle = .overCurrentContext
         present(levelsVC, animated: true, completion: nil)
-//        navigationController?.pushViewController(levelsVC, animated: true)
-        //        resultVC.modalDelegate = self // Don't forget to set modalDelegate
-        //        tr_presentViewController(resultVC, method: TRPresentTransitionMethod.fade, completion: {
-        //            print("Present finished.")
-        //        })
     }
     
     
-    @objc func presentResult() {
-        let resultVC = ResultVC()
-        navigationController?.pushViewController(resultVC, animated: true)
+    @objc func presentTabBarController() {
+        let tabBarController = TabBarController()
+//        let resultVC = ResultVC()
+        navigationController?.pushViewController(tabBarController, animated: true)
 //        resultVC.modalDelegate = self // Don't forget to set modalDelegate
 //        tr_presentViewController(resultVC, method: TRPresentTransitionMethod.fade, completion: {
 //            print("Present finished.")
@@ -342,6 +326,4 @@ extension ViewController: ViewControllerDelegate {
     func pass(level: Level) {
         self.level = level
     }
-    
-    
 }

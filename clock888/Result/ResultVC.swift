@@ -15,28 +15,6 @@ class ResultVC: UIViewController {
     var resultArray: [NSManagedObject] = []
     weak var modalDelegate: ModalViewControllerDelegate?
     
-    lazy var testButton: UIBarButtonItem = {
-        let button = UIButton(frame: .zero)
-        button.setImage(UIImage(named: "share"), for: .normal)
-        button.addTarget(self, action: #selector(presentAnimation), for: .touchUpInside)
-        return UIBarButtonItem(customView: button)
-    }()
-    
-    lazy var segmentedControl: UISegmentedControl = {
-        let control = UISegmentedControl(frame: .zero)
-        control.translatesAutoresizingMaskIntoConstraints = false
-        control.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        control.insertSegment(withTitle: "Last 10", at: 0, animated: true)
-        control.insertSegment(withTitle: "Friends", at: 1, animated: true)
-        control.layer.cornerRadius = 5.0  // Don't let background bleed
-        control.backgroundColor = .black
-        control.tintColor = .white
-        control.addTarget(self, action: #selector(changeColor), for: .valueChanged)
-        
-        //        control.backgroundColor = .blue
-        return control
-    }()
-    
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero)
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -83,34 +61,11 @@ class ResultVC: UIViewController {
     
     
     func setupView() {
-        view.addSubview(segmentedControl)
-//        view.addSubview(tableView)
-        navigationItem.setRightBarButton(testButton, animated: true)
+        view.addSubview(tableView)
     }
  
     func setupConstraints() {
-        
-        segmentedControl.fit(toTop: view, insets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
-//        tableView.fit(toBottom: view)
-//        tableView.fit(horizontal: view, below: segmentedControl, insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-//        tableView.fit(to: view)
-    }
-    
-    @objc func presentAnimation() {
-//        let cells = tableView.visibleCells(in: 0)
-//        let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
-//        UIView.animate(views: cells, animations: animations)
-    }
-    
-    @objc func changeColor(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 1:
-            self.view.backgroundColor = .green
-        case 2:
-            self.view.backgroundColor = .blue
-        default:
-            self.view.backgroundColor = .orange
-        }
+        tableView.fit(to: view)
     }
 }
 
