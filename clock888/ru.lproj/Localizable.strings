@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  clock888
-
-  Created by Javier Roberto on 05/10/2018.
-  Copyright © 2018 funtastic. All rights reserved.
-*/
-
 "main_description" = "Время идет, и вам нужно остановить его на 8:88";
 "start_key" = "START";
 "stop_key" = "STOP";
@@ -19,3 +11,10 @@
 "share_result" = "Поделитесь своим результатом";
 "play_again" = "Играть снова";
 "last_10" = "Последние 10";
+"best_results" = "Лучшие результаты";
+"menu_key" = "MENU";
+"description_levels_key" = "Разница между уровнями - это скорость таймера.";
+"newbie_key" = "Новичок";
+"middle_key" = "Средний";
+"pro_key" = "Pro";
+"results_key" = "РЕЗУЛЬТАТЫ";

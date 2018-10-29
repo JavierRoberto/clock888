@@ -28,14 +28,14 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     
     lazy var levelButton: UIBarButtonItem = {
         let button = UIButton(frame: .zero)
-        button.setImage(UIImage(named: "podium"), for: .normal)
+        button.setImage(UIImage(named: "levelsIcon"), for: .normal)
         button.addTarget(self, action: #selector(presentLevels), for: .touchUpInside)
         return UIBarButtonItem(customView: button)
     }()
     
     lazy var resultButton: UIBarButtonItem = {
         let button = UIButton(frame: .zero)
-        button.setImage(UIImage(named: "podium"), for: .normal)
+        button.setImage(UIImage(named: "resultIcon"), for: .normal)
         button.addTarget(self, action: #selector(presentTabBarController), for: .touchUpInside)
         return UIBarButtonItem(customView: button)
     }()
@@ -90,7 +90,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("go to Happy", for: .normal)
-        button.isHidden = false
+        button.isHidden = true
         button.titleLabel?.font = UIFont(name: "Hero", size: 20)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(presentHappy), for: UIControl.Event.touchUpInside)
@@ -114,7 +114,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     lazy var bannerView: GADBannerView = {
         let banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         banner.translatesAutoresizingMaskIntoConstraints = false
-        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        banner.adUnitID = "ca-app-pub-7177564470506351/9126892708"
         
         //        "ca-app-pub-7177564470506351/9126892708" --> token bueno
         //        "ca-app-pub-3940256099942544/2934735716" --> token de prueba
@@ -126,6 +126,18 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let imageBackButton = UIImage(named: "backButton")
+        navigationController?.navigationBar.backIndicatorImage = imageBackButton
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = imageBackButton
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = UIColor(red: 0.98, green: 0.25, blue: 0.38, alpha: 1)
+
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 253/255, green: 240/255, blue: 235/255, alpha: 1)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(red: 0.98, green: 0.25, blue: 0.38, alpha: 1),
+            NSAttributedString.Key.font: UIFont(name: "Hero", size: 30)!]
         
         setupView()
         setupConstraints()
@@ -145,7 +157,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     
     func setupView() {
         view.addSubview(stack)
-        stack.addSubview(clockLabel)
+        topView.addSubview(clockLabel)
         stack.addSubview(button)
         stack.addSubview(helpLabel)
         view.addSubview(bannerView)
@@ -162,8 +174,9 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         NSLayoutConstraint.activate([
             clockLabel.heightAnchor.constraint(equalToConstant: 100),
             clockLabel.widthAnchor.constraint(equalToConstant: 250),
-            clockLabel.centerXAnchor.constraint(equalTo: stack.centerXAnchor),
-            clockLabel.topAnchor.constraint(equalTo: stack.topAnchor, constant: 100),
+            clockLabel.centerYAnchor.constraint(equalTo: topView.centerYAnchor, constant: -20),
+            clockLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor),
+//            clockLabel.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -20),
 
             button.heightAnchor.constraint(equalToConstant: 235),
             button.widthAnchor.constraint(equalToConstant: 235),
@@ -215,9 +228,10 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     
     
     @objc func presentTabBarController() {
-        let tabBarController = TabBarController()
-//        let resultVC = ResultVC()
-        navigationController?.pushViewController(tabBarController, animated: true)
+        let resultVC = ResultVC()
+        navigationController?.pushViewController(resultVC, animated: true)
+//        let tabBarController = TabBarController()
+//        navigationController?.pushViewController(tabBarController, animated: true)
 //        resultVC.modalDelegate = self // Don't forget to set modalDelegate
 //        tr_presentViewController(resultVC, method: TRPresentTransitionMethod.fade, completion: {
 //            print("Present finished.")
@@ -277,6 +291,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         let result = NSManagedObject(entity: entity, insertInto: managedContext)
         result.setValue(time, forKeyPath: "timeResult")
         result.setValue(Date(), forKeyPath: "timeStamp")
+        result.setValue(level.rawValue, forKey: "level")
         do {
             try managedContext.save()
 //            result.append(time)

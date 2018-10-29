@@ -10,13 +10,43 @@ import UIKit
 
 class ResultCell: UITableViewCell {
 
+    lazy var paddingView: UIView = {
+        let view = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        view.layer.cornerRadius = 0.5 * 45
+        view.backgroundColor = UIColor(displayP3Red: 253/255, green: 231/255, blue: 235/255, alpha: 1)
+        view.addSubview(resultImageView)
+        return view
+    }()
+    
+    lazy var resultImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        imageView.layer.cornerRadius = 0.5 * 24
+        return imageView
+    }()
+    
     lazy var timeLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.text = "ddfffff"
+        label.textColor = UIColor(red: 0.98, green: 0.25, blue: 0.38, alpha: 1)
+        label.text = ""
         label.sizeToFit()
-        label.font = UIFont(name: "Hero", size: 20)
+        label.font = UIFont(name: "Hero", size: 18)
+        return label
+    }()
+    
+    lazy var levelLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 1)
+        label.text = ""
+        label.sizeToFit()
+        label.font = UIFont(name: "Hero", size: 16)
         return label
     }()
     
@@ -24,36 +54,41 @@ class ResultCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Hero", size: 20)
-        label.textColor = .black
+        label.textColor = UIColor(red: 0.98, green: 0.25, blue: 0.38, alpha: 1)
         label.sizeToFit()
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+            
+        label.numberOfLines = 2
+        label.textAlignment = .right
         return label
     }()
     
     lazy var container: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 254/255, green: 240/255, blue: 236/255, alpha: 1)
-        view.layer.cornerRadius = 8
-        view.layer.shadowColor = UIColor.gray.cgColor
-        view.layer.shadowOffset = CGSize(width: 1, height: 1)
-        view.layer.shadowRadius = 2
-        view.layer.shadowOpacity = 1
-        view.layer.shouldRasterize = true
-//        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
+        view.backgroundColor = .white
         return view
     }()
     
+//    lazy var spaceView: UIView = {
+//        let view = UIView(frame: .zero)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.backgroundColor = .orange
+//        view.heightAnchor.constraint(equalToConstant: 10).isActive = true
+//        return view
+//    }()
+    
     lazy var stack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [timeLabel/*, dateLabel*/])
+        let stack = UIStackView(arrangedSubviews: [paddingView, timeLabel, levelLabel, dateLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
+        stack.axis = .horizontal
         stack.alignment = .center
         return stack
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         setupView()
         setupConstraints()
     }
@@ -63,15 +98,31 @@ class ResultCell: UITableViewCell {
     }
     
     func setupView() {
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = UIColor(displayP3Red: 253/255, green: 240/255, blue: 235/255, alpha: 1)
         contentView.addSubview(container)
         container.addSubview(stack)
         
     }
     
     func setupConstraints() {
-        container.fit(to: contentView, insets: UIEdgeInsets(top: 15, left: 20, bottom: 15, right: 20))
+        resultImageView.center(into: paddingView)
+        container.fit(to: contentView, insets: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
         stack.fit(to: container, insets: UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20))
+        NSLayoutConstraint.activate([
+            timeLabel.leftAnchor.constraint(equalTo: paddingView.rightAnchor, constant: 15),
+            levelLabel.leftAnchor.constraint(equalTo: timeLabel.rightAnchor, constant: 15)
+            ])
     }
+}
 
+
+extension Date
+{
+    func toString( dateFormat format  : String ) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
+    
 }

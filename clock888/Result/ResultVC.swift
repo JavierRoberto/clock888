@@ -29,8 +29,9 @@ class ResultVC: UIViewController {
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 1)
-        self.navigationItem.title = "last_10".localized
-        self.view.backgroundColor = .white
+        
+        view.backgroundColor = UIColor(displayP3Red: 253/255, green: 240/255, blue: 235/255, alpha: 1)
+        tableView.backgroundColor = UIColor(displayP3Red: 253/255, green: 240/255, blue: 235/255, alpha: 1)
         setupView()
         setupConstraints()
         
@@ -59,6 +60,12 @@ class ResultVC: UIViewController {
         resultVM.requestInitialState(tableView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.title = "last_10".localized
+        self.title = "results_key".localized
+    }
+    
     
     func setupView() {
         view.addSubview(tableView)
@@ -79,8 +86,31 @@ extension ResultVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ResultCell
         
         let result = resultArray[indexPath.row]
-        cell.dateLabel.text = (result.value(forKeyPath: "timeStamp") as? Date)?.description
-        cell.timeLabel.text = result.value(forKeyPath: "timeResult") as? String
+        let firstPartOfDate = (result.value(forKeyPath: "timeStamp") as? Date)?.toString(dateFormat: "dd.MM.yyyy") ?? ""
+        let secondPartOfDate = (result.value(forKeyPath: "timeStamp") as? Date)?.toString(dateFormat: "HH:mm") ?? ""
+        let timeString = firstPartOfDate + "\n" + secondPartOfDate
+        
+        cell.dateLabel.text = timeString
+        let level: Int = result.value(forKeyPath: "level") as? Int ?? 1
+        var levelString: String = ""
+        switch level {
+        case Level.bronze.rawValue:
+            levelString = "newbie_key".localized
+        case Level.silver.rawValue:
+            levelString = "middle_key".localized
+        case Level.gold.rawValue:
+            levelString = "pro_key".localized
+        default:
+            levelString = ""
+        }
+        cell.levelLabel.text = levelString
+        let timeResult = result.value(forKeyPath: "timeResult") as? String
+        cell.timeLabel.text = timeResult
+        let sadImage = UIImage(named: "sad")!
+        let happyImage = UIImage(named: "happy")!
+        cell.resultImageView.image = timeResult == "88:88" ? happyImage : sadImage
         return cell
     }
 }
+
+

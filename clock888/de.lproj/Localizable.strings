@@ -1,17 +1,9 @@
-/* 
-  Localizable.strings
-  clock888
-
-  Created by Javier Roberto on 05/10/2018.
-  Copyright © 2018 funtastic. All rights reserved.
-*/
-
 "main_description" = "Die Zeit läuft und du musst sie um 8:88 stoppen";
 "start_key" = "START";
 "stop_key" = "STOP";
 "no_key" = "Nein!";
 "result_key" = "Ihr Ergebnis:";
-"you_were_close" = "Du warst nah dran ";
+"you_were_close" = "Du warst nah dran";
 "sec" = "sek.";
 "try_again" = "Erneut versuchen";
 "well_done" = "Gut gemacht!";
@@ -19,3 +11,10 @@
 "share_result" = "Teile dein Ergebnis";
 "play_again" = "Wieder abspielen";
 "last_10" = "Letzte 10";
+"best_results" = "Beste Ergebnisse";
+"menu_key" = "MENÜ";
+"description_levels_key" = "Der Unterschied zwischen den Levels ist die Geschwindigkeit des Timers.";
+"newbie_key" = "Neuling";
+"middle_key" = "Mitte";
+"pro_key" = "Pro";
+"results_key" = "ERGEBNISSE";

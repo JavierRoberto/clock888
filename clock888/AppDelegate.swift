@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
 //      PARA PRUEBAS -> ca-app-pub-3940256099942544~1458002511
         //REal -> "ca-app-pub-7419924566886338~9085407242"
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-7419924566886338~9085407242")
         
         return true
     }

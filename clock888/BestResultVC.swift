@@ -42,7 +42,7 @@ class BestResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.addSubview(stack)
         guard
             let navbarHeight = navigationController?.navigationBar.frame.maxY,
@@ -55,6 +55,10 @@ class BestResultVC: UIViewController {
             ])
         
         stack.fit(toBottom: view)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.title = "best_results".localized
     }
 }

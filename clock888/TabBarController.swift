@@ -12,7 +12,6 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let resultVC = ResultVC()
         let bestVC = BestResultVC()
         

@@ -11,3 +11,13 @@
 "share_result" = "Share your result";
 "play_again" = "Play again";
 "last_10" = "Last 10";
+"best_results" = "Best results";
+"menu_key" = "MENU";
+"description_levels_key" = "The difference between levels is the speed of the timer.";
+"newbie_key" = "Newbie";
+"middle_key" = "Middle";
+"pro_key" = "Pro";
+"results_key" = "RESULTS";
+
+
+
