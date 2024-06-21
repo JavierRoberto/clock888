@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,15 +28,15 @@
 		A3F3227A2162DAEA00407DD0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F322792162DAEA00407DD0 /* StringExtension.swift */; };
 		A3F322A42163ECDE00407DD0 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F322A32163ECDE00407DD0 /* TimeIntervalExtension.swift */; };
 		A3F322A621668C9900407DD0 /* IBMPlexMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3F322A521668C9900407DD0 /* IBMPlexMono-Light.ttf */; };
-		A3F322A721668DA600407DD0 /* 8:88 copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3E772DB215AB5660019AB6D /* 8:88 copy-Info.plist */; };
+		A3F322A721668DA600407DD0 /* 888 copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3E772DB215AB5660019AB6D /* 888 copy-Info.plist */; };
 		A3F322A921668E0E00407DD0 /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3F322A821668E0E00407DD0 /* IBMPlexMono-Medium.ttf */; };
 		A3F322B12167C4F400407DD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3F322AF2167C4F400407DD0 /* Localizable.strings */; };
-		F9A584108891DFC6507B557C /* Pods_8_88.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAC4E40FC7BF716B99587AF /* Pods_8_88.framework */; };
+		F9A584108891DFC6507B557C /* Pods_888.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAC4E40FC7BF716B99587AF /* Pods_888.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DAC4E40FC7BF716B99587AF /* Pods_8_88.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_8_88.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		41431887E49C8DE7E1F6E6E7 /* Pods-8:88.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8:88.debug.xcconfig"; path = "Pods/Target Support Files/Pods-8:88/Pods-8:88.debug.xcconfig"; sourceTree = "<group>"; };
+		010470090AD3F65B56B076BA /* Pods-888.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-888.debug.xcconfig"; path = "Pods/Target Support Files/Pods-888/Pods-888.debug.xcconfig"; sourceTree = "<group>"; };
+		2DAC4E40FC7BF716B99587AF /* Pods_888.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_888.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35FE4CC217E4D0E0052E56C /* Anonymous_Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Anonymous_Pro.ttf; sourceTree = "<group>"; };
 		A35FE4CE217E4F580052E56C /* LevelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsVC.swift; sourceTree = "<group>"; };
 		A35FE4D0218128B30052E56C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -56,8 +56,8 @@
 		A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 		A3CE290C2149D2B10060260F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3E772AE21554E070019AB6D /* HappyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappyVC.swift; sourceTree = "<group>"; };
-		A3E772DA215AB5660019AB6D /* 8:88.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "8:88.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3E772DB215AB5660019AB6D /* 8:88 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "8:88 copy-Info.plist"; path = "/Users/javierroberto/Proyectos/iOS/clock888/8:88 copy-Info.plist"; sourceTree = "<absolute>"; };
+		A3E772DA215AB5660019AB6D /* 888.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 888.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3E772DB215AB5660019AB6D /* 888 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "888 copy-Info.plist"; path = "/Users/javier.roberto/repositories/iOS/clock888/888 copy-Info.plist"; sourceTree = "<absolute>"; };
 		A3F322792162DAEA00407DD0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A3F322A32163ECDE00407DD0 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		A3F322A521668C9900407DD0 /* IBMPlexMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Light.ttf"; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		A3F322B92168BEEE00407DD0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "clock888/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A3F322BA2168BFBC00407DD0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = clock888/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3F322BB2168BFE700407DD0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = clock888/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B51410BFD007C4BA7F55AE5D /* Pods-8:88.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8:88.release.xcconfig"; path = "Pods/Target Support Files/Pods-8:88/Pods-8:88.release.xcconfig"; sourceTree = "<group>"; };
+		ACF54D7AB0D61499DB77C95F /* Pods-888.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-888.release.xcconfig"; path = "Pods/Target Support Files/Pods-888/Pods-888.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9A584108891DFC6507B557C /* Pods_8_88.framework in Frameworks */,
+				F9A584108891DFC6507B557C /* Pods_888.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 		64B99AE7FEFA5ECC7B05B232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2DAC4E40FC7BF716B99587AF /* Pods_8_88.framework */,
+				2DAC4E40FC7BF716B99587AF /* Pods_888.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,8 +97,8 @@
 		91CD21AC948317057799A9A6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				41431887E49C8DE7E1F6E6E7 /* Pods-8:88.debug.xcconfig */,
-				B51410BFD007C4BA7F55AE5D /* Pods-8:88.release.xcconfig */,
+				010470090AD3F65B56B076BA /* Pods-888.debug.xcconfig */,
+				ACF54D7AB0D61499DB77C95F /* Pods-888.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -133,14 +133,14 @@
 				A3C1D1FD2146F67C00BEC14A /* Products */,
 				91CD21AC948317057799A9A6 /* Pods */,
 				64B99AE7FEFA5ECC7B05B232 /* Frameworks */,
-				A3E772DB215AB5660019AB6D /* 8:88 copy-Info.plist */,
+				A3E772DB215AB5660019AB6D /* 888 copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		A3C1D1FD2146F67C00BEC14A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A3E772DA215AB5660019AB6D /* 8:88.app */,
+				A3E772DA215AB5660019AB6D /* 888.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,9 +172,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A3E772C6215AB5660019AB6D /* 8:88 */ = {
+		A3E772C6215AB5660019AB6D /* 888 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A3E772D7215AB5660019AB6D /* Build configuration list for PBXNativeTarget "8:88" */;
+			buildConfigurationList = A3E772D7215AB5660019AB6D /* Build configuration list for PBXNativeTarget "888" */;
 			buildPhases = (
 				A3E772C7215AB5660019AB6D /* [CP] Check Pods Manifest.lock */,
 				A3E772C8215AB5660019AB6D /* Sources */,
@@ -186,9 +186,9 @@
 			);
 			dependencies = (
 			);
-			name = "8:88";
+			name = 888;
 			productName = clock888;
-			productReference = A3E772DA215AB5660019AB6D /* 8:88.app */;
+			productReference = A3E772DA215AB5660019AB6D /* 888.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +219,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A3E772C6215AB5660019AB6D /* 8:88 */,
+				A3E772C6215AB5660019AB6D /* 888 */,
 			);
 		};
 /* End PBXProject section */
@@ -236,7 +236,7 @@
 				A3F322B12167C4F400407DD0 /* Localizable.strings in Resources */,
 				A3E772D3215AB5660019AB6D /* GoogleService-Info.plist in Resources */,
 				A35FE4CD217E4D0E0052E56C /* Anonymous_Pro.ttf in Resources */,
-				A3F322A721668DA600407DD0 /* 8:88 copy-Info.plist in Resources */,
+				A3F322A721668DA600407DD0 /* 888 copy-Info.plist in Resources */,
 				A3E772D4215AB5660019AB6D /* Assets.xcassets in Resources */,
 				A3E772D5215AB5660019AB6D /* Main.storyboard in Resources */,
 			);
@@ -256,7 +256,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-8:88-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-888-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -268,25 +268,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-8:88/Pods-8:88-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/TransitionAnimation/TransitionAnimation.framework",
-				"${BUILT_PRODUCTS_DIR}/TransitionTreasury/TransitionTreasury.framework",
-				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-888/Pods-888-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionAnimation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionTreasury.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-888/Pods-888-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-8:88/Pods-8:88-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-888/Pods-888-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -469,20 +460,20 @@
 		};
 		A3E772D8215AB5660019AB6D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41431887E49C8DE7E1F6E6E7 /* Pods-8:88.debug.xcconfig */;
+			baseConfigurationReference = 010470090AD3F65B56B076BA /* Pods-888.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = A894P23KUL;
-				INFOPLIST_FILE = "8:88 copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				DEVELOPMENT_TEAM = 2YJY8MY2HR;
+				INFOPLIST_FILE = "888 copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.funtastic.clock888;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.funtastic.clock888-v3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -493,20 +484,20 @@
 		};
 		A3E772D9215AB5660019AB6D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B51410BFD007C4BA7F55AE5D /* Pods-8:88.release.xcconfig */;
+			baseConfigurationReference = ACF54D7AB0D61499DB77C95F /* Pods-888.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = A894P23KUL;
-				INFOPLIST_FILE = "8:88 copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				DEVELOPMENT_TEAM = 2YJY8MY2HR;
+				INFOPLIST_FILE = "888 copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.funtastic.clock888;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.funtastic.clock888-v3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -527,7 +518,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A3E772D7215AB5660019AB6D /* Build configuration list for PBXNativeTarget "8:88" */ = {
+		A3E772D7215AB5660019AB6D /* Build configuration list for PBXNativeTarget "888" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A3E772D8215AB5660019AB6D /* Debug */,
