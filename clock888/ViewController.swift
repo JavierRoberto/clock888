@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import GoogleMobileAds
+//import GoogleMobileAds
 import TransitionTreasury
 import TransitionAnimation
 import CoreData
@@ -111,16 +111,16 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         return label
     }()
     
-    lazy var bannerView: GADBannerView = {
-        let banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        banner.translatesAutoresizingMaskIntoConstraints = false
-        banner.adUnitID = "ca-app-pub-7177564470506351/9126892708"
-        
-        //        "ca-app-pub-7177564470506351/9126892708" --> token bueno
-        //        "ca-app-pub-3940256099942544/2934735716" --> token de prueba
-        banner.rootViewController = self
-        return banner
-    }()
+//    lazy var bannerView: GADBannerView = {
+//        let banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+//        banner.translatesAutoresizingMaskIntoConstraints = false
+//        banner.adUnitID = "ca-app-pub-7177564470506351/9126892708"
+//        
+//        //        "ca-app-pub-7177564470506351/9126892708" --> token bueno
+//        //        "ca-app-pub-3940256099942544/2934735716" --> token de prueba
+//        banner.rootViewController = self
+//        return banner
+//    }()
     
     var tr_presentTransition: TRViewControllerTransitionDelegate?
     
@@ -142,9 +142,9 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         setupView()
         setupConstraints()
         
-        
-        bannerView.delegate = self
-        bannerView.load(GADRequest())
+//        
+//        bannerView.delegate = self
+//        bannerView.load(GADRequest())
         
         
         for family: String in UIFont.familyNames {
@@ -160,7 +160,7 @@ class ViewController: UIViewController, ModalTransitionDelegate {
         topView.addSubview(clockLabel)
         stack.addSubview(button)
         stack.addSubview(helpLabel)
-        view.addSubview(bannerView)
+//        view.addSubview(bannerView)
         view.addSubview(goToHappyButton)
         
         navigationItem.setLeftBarButton(levelButton, animated: true)
@@ -186,8 +186,8 @@ class ViewController: UIViewController, ModalTransitionDelegate {
             helpLabel.leftAnchor.constraint(equalTo: stack.leftAnchor, constant: 20),
             helpLabel.rightAnchor.constraint(equalTo: stack.rightAnchor, constant: -20),
             
-            bannerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            bannerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+//            bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             
             goToHappyButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
@@ -302,40 +302,40 @@ class ViewController: UIViewController, ModalTransitionDelegate {
     
 }
 
-extension ViewController: GADBannerViewDelegate {
-    /// Tells the delegate an ad request loaded an ad.
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("adViewDidReceiveAd")
-    }
-    
-    /// Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView,
-                didFailToReceiveAdWithError error: GADRequestError) {
-        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-    
-    /// Tells the delegate that a full-screen view will be presented in response
-    /// to the user clicking on an ad.
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print("adViewWillPresentScreen")
-    }
-    
-    /// Tells the delegate that the full-screen view will be dismissed.
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewWillDismissScreen")
-    }
-    
-    /// Tells the delegate that the full-screen view has been dismissed.
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewDidDismissScreen")
-    }
-    
-    /// Tells the delegate that a user click will open another app (such as
-    /// the App Store), backgrounding the current app.
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print("adViewWillLeaveApplication")
-    }
-}
+//extension ViewController: GADBannerViewDelegate {
+//    /// Tells the delegate an ad request loaded an ad.
+//    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+//        print("adViewDidReceiveAd")
+//    }
+//    
+//    /// Tells the delegate an ad request failed.
+//    func adView(_ bannerView: GADBannerView,
+//                didFailToReceiveAdWithError error: GADRequestError) {
+//        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+//    }
+//    
+//    /// Tells the delegate that a full-screen view will be presented in response
+//    /// to the user clicking on an ad.
+//    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+//        print("adViewWillPresentScreen")
+//    }
+//    
+//    /// Tells the delegate that the full-screen view will be dismissed.
+//    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+//        print("adViewWillDismissScreen")
+//    }
+//    
+//    /// Tells the delegate that the full-screen view has been dismissed.
+//    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+//        print("adViewDidDismissScreen")
+//    }
+//    
+//    /// Tells the delegate that a user click will open another app (such as
+//    /// the App Store), backgrounding the current app.
+//    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+//        print("adViewWillLeaveApplication")
+//    }
+//}
 
 extension ViewController: ViewControllerDelegate {
     func pass(level: Level) {

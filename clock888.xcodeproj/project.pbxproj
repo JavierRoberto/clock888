@@ -22,15 +22,20 @@
 		A3E772CD215AB5660019AB6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */; };
 		A3E772D1215AB5660019AB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2082146F67E00BEC14A /* LaunchScreen.storyboard */; };
 		A3E772D2215AB5660019AB6D /* Hero.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3B5FA152152BFF500E3DDCA /* Hero.otf */; };
-		A3E772D3215AB5660019AB6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CE290C2149D2B10060260F /* GoogleService-Info.plist */; };
 		A3E772D4215AB5660019AB6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2062146F67E00BEC14A /* Assets.xcassets */; };
 		A3E772D5215AB5660019AB6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1D2032146F67C00BEC14A /* Main.storyboard */; };
 		A3F3227A2162DAEA00407DD0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F322792162DAEA00407DD0 /* StringExtension.swift */; };
 		A3F322A42163ECDE00407DD0 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F322A32163ECDE00407DD0 /* TimeIntervalExtension.swift */; };
 		A3F322A621668C9900407DD0 /* IBMPlexMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3F322A521668C9900407DD0 /* IBMPlexMono-Light.ttf */; };
-		A3F322A721668DA600407DD0 /* 888 copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3E772DB215AB5660019AB6D /* 888 copy-Info.plist */; };
 		A3F322A921668E0E00407DD0 /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3F322A821668E0E00407DD0 /* IBMPlexMono-Medium.ttf */; };
 		A3F322B12167C4F400407DD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3F322AF2167C4F400407DD0 /* Localizable.strings */; };
+		EF6D73512C259C660030D871 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF6D73502C259C660030D871 /* GoogleService-Info.plist */; };
+		EF6D73532C25A18F0030D871 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EF6D73522C25A18F0030D871 /* FirebaseAnalytics */; };
+		EF6D73552C25A18F0030D871 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = EF6D73542C25A18F0030D871 /* FirebaseAnalyticsOnDeviceConversion */; };
+		EF6D73572C25A18F0030D871 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF6D73562C25A18F0030D871 /* FirebaseAnalyticsSwift */; };
+		EF6D73592C25A18F0030D871 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = EF6D73582C25A18F0030D871 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		EF6D735C2C25B36B0030D871 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = EF6D735B2C25B36B0030D871 /* GoogleMobileAds */; };
+		EF6D735E2C25BCF30030D871 /* 888 copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF6D735D2C25BCF30030D871 /* 888 copy-Info.plist */; };
 		F9A584108891DFC6507B557C /* Pods_888.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAC4E40FC7BF716B99587AF /* Pods_888.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,10 +59,8 @@
 		A3C1D2092146F67E00BEC14A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3C1D20B2146F67E00BEC14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
-		A3CE290C2149D2B10060260F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3E772AE21554E070019AB6D /* HappyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappyVC.swift; sourceTree = "<group>"; };
 		A3E772DA215AB5660019AB6D /* 888.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 888.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3E772DB215AB5660019AB6D /* 888 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "888 copy-Info.plist"; path = "/Users/javier.roberto/repositories/iOS/clock888/888 copy-Info.plist"; sourceTree = "<absolute>"; };
 		A3F322792162DAEA00407DD0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A3F322A32163ECDE00407DD0 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		A3F322A521668C9900407DD0 /* IBMPlexMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Light.ttf"; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 		A3F322BA2168BFBC00407DD0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = clock888/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3F322BB2168BFE700407DD0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = clock888/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ACF54D7AB0D61499DB77C95F /* Pods-888.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-888.release.xcconfig"; path = "Pods/Target Support Files/Pods-888/Pods-888.release.xcconfig"; sourceTree = "<group>"; };
+		EF6D73502C259C660030D871 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF6D735D2C25BCF30030D871 /* 888 copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "888 copy-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF6D735C2C25B36B0030D871 /* GoogleMobileAds in Frameworks */,
+				EF6D73572C25A18F0030D871 /* FirebaseAnalyticsSwift in Frameworks */,
+				EF6D73592C25A18F0030D871 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				EF6D73532C25A18F0030D871 /* FirebaseAnalytics in Frameworks */,
+				EF6D73552C25A18F0030D871 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				F9A584108891DFC6507B557C /* Pods_888.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +158,7 @@
 		A3C1D1FE2146F67C00BEC14A /* clock888 */ = {
 			isa = PBXGroup;
 			children = (
+				EF6D73502C259C660030D871 /* GoogleService-Info.plist */,
 				A3C1D1FF2146F67C00BEC14A /* AppDelegate.swift */,
 				A33112EE215067E7001797C3 /* Resources */,
 				A3C1D2012146F67C00BEC14A /* ViewController.swift */,
@@ -164,7 +175,6 @@
 				A3C1D2062146F67E00BEC14A /* Assets.xcassets */,
 				A3C1D2082146F67E00BEC14A /* LaunchScreen.storyboard */,
 				A3C1D20B2146F67E00BEC14A /* Info.plist */,
-				A3CE290C2149D2B10060260F /* GoogleService-Info.plist */,
 			);
 			path = clock888;
 			sourceTree = "<group>";
@@ -187,6 +197,13 @@
 			dependencies = (
 			);
 			name = 888;
+			packageProductDependencies = (
+				EF6D73522C25A18F0030D871 /* FirebaseAnalytics */,
+				EF6D73542C25A18F0030D871 /* FirebaseAnalyticsOnDeviceConversion */,
+				EF6D73562C25A18F0030D871 /* FirebaseAnalyticsSwift */,
+				EF6D73582C25A18F0030D871 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				EF6D735B2C25B36B0030D871 /* GoogleMobileAds */,
+			);
 			productName = clock888;
 			productReference = A3E772DA215AB5660019AB6D /* 888.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +232,10 @@
 				ru,
 			);
 			mainGroup = A3C1D1F32146F67B00BEC14A;
+			packageReferences = (
+				EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				EF6D735A2C25B36B0030D871 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = A3C1D1FD2146F67C00BEC14A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,11 +255,11 @@
 				A3F322A921668E0E00407DD0 /* IBMPlexMono-Medium.ttf in Resources */,
 				A3F322A621668C9900407DD0 /* IBMPlexMono-Light.ttf in Resources */,
 				A3F322B12167C4F400407DD0 /* Localizable.strings in Resources */,
-				A3E772D3215AB5660019AB6D /* GoogleService-Info.plist in Resources */,
 				A35FE4CD217E4D0E0052E56C /* Anonymous_Pro.ttf in Resources */,
-				A3F322A721668DA600407DD0 /* 888 copy-Info.plist in Resources */,
+				EF6D73512C259C660030D871 /* GoogleService-Info.plist in Resources */,
 				A3E772D4215AB5660019AB6D /* Assets.xcassets in Resources */,
 				A3E772D5215AB5660019AB6D /* Main.storyboard in Resources */,
+				EF6D735E2C25BCF30030D871 /* 888 copy-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -449,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -468,12 +489,13 @@
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEVELOPMENT_TEAM = 2YJY8MY2HR;
 				INFOPLIST_FILE = "888 copy-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.arcade-games";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.funtastic.clock888-v3";
+				PRODUCT_BUNDLE_IDENTIFIER = com.funtastic.clock888;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -492,12 +514,13 @@
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEVELOPMENT_TEAM = 2YJY8MY2HR;
 				INFOPLIST_FILE = "888 copy-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.arcade-games";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.funtastic.clock888-v3";
+				PRODUCT_BUNDLE_IDENTIFIER = com.funtastic.clock888;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -528,6 +551,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.0;
+			};
+		};
+		EF6D735A2C25B36B0030D871 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EF6D73522C25A18F0030D871 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EF6D73542C25A18F0030D871 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		EF6D73562C25A18F0030D871 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		EF6D73582C25A18F0030D871 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		EF6D735B2C25B36B0030D871 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6D735A2C25B36B0030D871 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A3AFB5C2217661270054B054 /* clock888.xcdatamodeld */ = {

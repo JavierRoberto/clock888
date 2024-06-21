@@ -6,24 +6,26 @@
 //  Copyright © 2018 funtastic. All rights reserved.
 //
 
-import UIKit
-import TransitionTreasury
+import GoogleMobileAds
 import TransitionAnimation
+import TransitionTreasury
+import UIKit
 
 class SadVC: UIViewController {
+    private var interstitial: GADInterstitialAd?
 
     var time: Double = 0
-    
+
     weak var modalDelegate: ModalViewControllerDelegate?
     let heightDismissButton: CGFloat = 60
-    
+
     lazy var topView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(red: 0.98, green: 0.25, blue: 0.38, alpha: 0.1)
         return view
     }()
-    
+
     lazy var icon: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +33,7 @@ class SadVC: UIViewController {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
+
     lazy var noLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -41,18 +43,18 @@ class SadVC: UIViewController {
         label.textAlignment = .center
         return label
     }()
-    
+
     lazy var timeLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "result_key".localized + time.secondMS
         label.sizeToFit()
-        label.textColor = UIColor(red: 244/255, green: 104/255, blue: 84/255, alpha: 1)
+        label.textColor = UIColor(red: 244 / 255, green: 104 / 255, blue: 84 / 255, alpha: 1)
         label.font = UIFont(name: "Hero", size: 20)
         label.textAlignment = .center
         return label
     }()
-    
+
     lazy var descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -62,12 +64,12 @@ class SadVC: UIViewController {
         label.sizeToFit()
         return label
     }()
-    
+
     lazy var dismissButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("try_again".localized, for: .normal)
-        
+
         button.titleLabel?.font = UIFont(name: "Hero", size: 26)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(red: 0.98, green: 0.25, blue: 0.38, alpha: 1)
@@ -77,14 +79,13 @@ class SadVC: UIViewController {
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         return button
     }()
-    
+
     override func viewDidLoad() {
-        self.view.backgroundColor = .white
+        view.backgroundColor = .white
         setupView()
         setupConstraints()
-        
     }
-    
+
     func setupView() {
         view.addSubview(topView)
         view.addSubview(dismissButton)
@@ -100,24 +101,56 @@ class SadVC: UIViewController {
         timeLabel.fit(horizontal: view, below: noLabel, insets: UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20))
         descriptionLabel.fit(horizontal: view, below: timeLabel, insets: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
         noLabel.fit(horizontal: view, below: icon, insets: UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0))
-        
-        
-        NSLayoutConstraint.activate([     
+
+        NSLayoutConstraint.activate([
             topView.bottomAnchor.constraint(equalTo: dismissButton.topAnchor, constant: heightDismissButton / 2),
-            
+
             icon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             icon.heightAnchor.constraint(equalToConstant: 128),
             icon.widthAnchor.constraint(equalToConstant: 128),
-            
+
             dismissButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
             dismissButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
             dismissButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -150),
-            dismissButton.heightAnchor.constraint(equalToConstant: heightDismissButton)
-            
-            ])
+            dismissButton.heightAnchor.constraint(equalToConstant: heightDismissButton),
+
+        ])
     }
 
     @objc func dismissView() {
-        modalDelegate?.modalViewControllerDismiss(callbackData: nil)
+//        modalDelegate?.modalViewControllerDismiss(callbackData: nil)
+        Task {
+            do {
+                interstitial = try await GADInterstitialAd.load(
+                    withAdUnitID: "ca-app-pub-3940256099942544/4411468910", request: GADRequest()
+                )
+                
+                guard let interstitial = interstitial else {
+                  return print("Ad wasn't ready.")
+                }
+
+                // The UIViewController parameter is an optional.
+                interstitial.present(fromRootViewController: nil)
+            } catch {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+            }
+        }
     }
+}
+
+extension SadVC: GADFullScreenContentDelegate {
+    /// Tells the delegate that the ad failed to present full screen content.
+      func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad did fail to present full screen content.")
+      }
+
+      /// Tells the delegate that the ad will present full screen content.
+      func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad will present full screen content.")
+      }
+
+      /// Tells the delegate that the ad dismissed full screen content.
+      func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did dismiss full screen content.")
+      }
 }

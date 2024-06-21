@@ -6,9 +6,9 @@ target '888' do
   use_frameworks!
   
   # Pods for clock888
-  pod 'Firebase/Core'
-  pod 'Firebase/AdMob'
-  pod 'TransitionTreasury', '~> 5.0'
+#  pod 'Firebase/Core'
+#  pod 'Firebase/AdMob'
+  pod 'TransitionTreasury'
   pod 'TransitionAnimation', '~> 5.0'
-  pod "ViewAnimator"
+  pod 'ViewAnimator'
 end
