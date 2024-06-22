@@ -77,10 +77,23 @@ class SadVC: UIViewController {
         return button
     }()
 
+    fileprivate func setUpAd() {
+        Task {
+            do {
+                interstitial = try await GADInterstitialAd.load(
+                    withAdUnitID: "ca-app-pub-3940256099942544/4411468910", request: GADRequest()
+                )
+            } catch {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+            }
+        }
+    }
+
     override func viewDidLoad() {
         view.backgroundColor = .white
         setupView()
         setupConstraints()
+        setUpAd()
     }
 
     func setupView() {
@@ -110,29 +123,12 @@ class SadVC: UIViewController {
             dismissButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
             dismissButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -150),
             dismissButton.heightAnchor.constraint(equalToConstant: heightDismissButton),
-
         ])
     }
 
     @objc func dismissView() {
-        dismiss(animated: true)
-        Task {
-            do {
-                interstitial = try await GADInterstitialAd.load(
-                    withAdUnitID: "ca-app-pub-3940256099942544/4411468910", request: GADRequest()
-                )
-
-                guard let interstitial = interstitial else {
-                    return print("Ad wasn't ready.")
-                }
-
-                // The UIViewController parameter is an optional.
-                interstitial.present(fromRootViewController: nil)
-//                self.dismiss(animated: true)
-
-            } catch {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-            }
+        dismiss(animated: true) { [weak self] in
+            self?.interstitial?.present(fromRootViewController: nil)
         }
     }
 }
