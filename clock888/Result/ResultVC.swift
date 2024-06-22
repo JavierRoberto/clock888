@@ -6,15 +6,12 @@
 //  Copyright © 2018 funtastic. All rights reserved.
 //
 
-import UIKit
-import TransitionTreasury
 import CoreData
+import UIKit
 
 class ResultVC: UIViewController {
-
     var resultArray: [NSManagedObject] = []
-    weak var modalDelegate: ModalViewControllerDelegate?
-    
+
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero)
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -26,15 +23,15 @@ class ResultVC: UIViewController {
         table.isHidden = true
         return table
     }()
-    
+
     override func viewDidLoad() {
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 1)
-        
-        view.backgroundColor = UIColor(displayP3Red: 253/255, green: 240/255, blue: 235/255, alpha: 1)
-        tableView.backgroundColor = UIColor(displayP3Red: 253/255, green: 240/255, blue: 235/255, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 1)
+
+        view.backgroundColor = UIColor(displayP3Red: 253 / 255, green: 240 / 255, blue: 235 / 255, alpha: 1)
+        tableView.backgroundColor = UIColor(displayP3Red: 253 / 255, green: 240 / 255, blue: 235 / 255, alpha: 1)
         setupView()
         setupConstraints()
-        
+
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Result")
@@ -42,7 +39,7 @@ class ResultVC: UIViewController {
         do {
             resultArray = try managedContext.fetch(fetchRequest)
             if resultArray.count > 10 {
-                for i in 10...resultArray.count - 1 {
+                for i in 10 ... resultArray.count - 1 {
                     managedContext.delete(resultArray[i])
                 }
                 do {
@@ -59,40 +56,38 @@ class ResultVC: UIViewController {
         let resultVM = ResultVM()
         resultVM.requestInitialState(tableView)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.title = "last_10".localized
-        self.title = "results_key".localized
+        tabBarController?.navigationItem.title = "last_10".localized
+        title = "results_key".localized
     }
-    
-    
+
     func setupView() {
         view.addSubview(tableView)
     }
- 
+
     func setupConstraints() {
         tableView.fit(to: view)
     }
 }
 
 extension ResultVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return resultArray.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ResultCell
-        
+
         let result = resultArray[indexPath.row]
         let firstPartOfDate = (result.value(forKeyPath: "timeStamp") as? Date)?.toString(dateFormat: "dd.MM.yyyy") ?? ""
         let secondPartOfDate = (result.value(forKeyPath: "timeStamp") as? Date)?.toString(dateFormat: "HH:mm") ?? ""
         let timeString = firstPartOfDate + "\n" + secondPartOfDate
-        
+
         cell.dateLabel.text = timeString
         let level: Int = result.value(forKeyPath: "level") as? Int ?? 1
-        var levelString: String = ""
+        var levelString = ""
         switch level {
         case Level.bronze.rawValue:
             levelString = "newbie_key".localized
@@ -112,5 +107,3 @@ extension ResultVC: UITableViewDataSource {
         return cell
     }
 }
-
-

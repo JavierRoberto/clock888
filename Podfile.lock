@@ -1,25 +1,16 @@
 PODS:
-  - TransitionAnimation (5.0.0):
-    - TransitionTreasury (~> 5.0)
-  - TransitionTreasury (5.0.0)
   - ViewAnimator (3.1.0)
 
 DEPENDENCIES:
-  - TransitionAnimation (~> 5.0)
-  - TransitionTreasury
   - ViewAnimator
 
 SPEC REPOS:
   trunk:
-    - TransitionAnimation
-    - TransitionTreasury
     - ViewAnimator
 
 SPEC CHECKSUMS:
-  TransitionAnimation: 5585d0eafbf4d7adc61fa8fef62ee2fe7878df27
-  TransitionTreasury: f88b7f9b4c61aa178a3c1dd446b64aebd990bda9
   ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
 
-PODFILE CHECKSUM: 34eb81025202c693552f8be9f1e404038474aae2
+PODFILE CHECKSUM: cb271b979b53d2455ae540f358beab8eb1e9add8
 
 COCOAPODS: 1.15.2

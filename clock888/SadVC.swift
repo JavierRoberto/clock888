@@ -7,8 +7,6 @@
 //
 
 import GoogleMobileAds
-import TransitionAnimation
-import TransitionTreasury
 import UIKit
 
 class SadVC: UIViewController {
@@ -16,7 +14,6 @@ class SadVC: UIViewController {
 
     var time: Double = 0
 
-    weak var modalDelegate: ModalViewControllerDelegate?
     let heightDismissButton: CGFloat = 60
 
     lazy var topView: UIView = {
@@ -118,19 +115,21 @@ class SadVC: UIViewController {
     }
 
     @objc func dismissView() {
-//        modalDelegate?.modalViewControllerDismiss(callbackData: nil)
+        dismiss(animated: true)
         Task {
             do {
                 interstitial = try await GADInterstitialAd.load(
                     withAdUnitID: "ca-app-pub-3940256099942544/4411468910", request: GADRequest()
                 )
-                
+
                 guard let interstitial = interstitial else {
-                  return print("Ad wasn't ready.")
+                    return print("Ad wasn't ready.")
                 }
 
                 // The UIViewController parameter is an optional.
                 interstitial.present(fromRootViewController: nil)
+//                self.dismiss(animated: true)
+
             } catch {
                 print("Failed to load interstitial ad with error: \(error.localizedDescription)")
             }
@@ -140,17 +139,17 @@ class SadVC: UIViewController {
 
 extension SadVC: GADFullScreenContentDelegate {
     /// Tells the delegate that the ad failed to present full screen content.
-      func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+    func ad(_: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError _: Error) {
         print("Ad did fail to present full screen content.")
-      }
+    }
 
-      /// Tells the delegate that the ad will present full screen content.
-      func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    /// Tells the delegate that the ad will present full screen content.
+    func adWillPresentFullScreenContent(_: GADFullScreenPresentingAd) {
         print("Ad will present full screen content.")
-      }
+    }
 
-      /// Tells the delegate that the ad dismissed full screen content.
-      func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    /// Tells the delegate that the ad dismissed full screen content.
+    func adDidDismissFullScreenContent(_: GADFullScreenPresentingAd) {
         print("Ad did dismiss full screen content.")
-      }
+    }
 }
