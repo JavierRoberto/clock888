@@ -203,7 +203,6 @@ class ViewController: UIViewController {
     }
 
     @objc func advanceTimer() {
-        print("Level: \(level)")
         time = (Date().timeIntervalSinceReferenceDate - startTime) * Double(level.rawValue)
         if time.secondMS == "10:00" {
             presentSad(time: time)
