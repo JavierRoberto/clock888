@@ -148,6 +148,10 @@ class ViewController: UIViewController {
 //            }
 //        }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        clockLabel.text = "0:00"
+    }
 
     func setupView() {
         view.addSubview(stack)
