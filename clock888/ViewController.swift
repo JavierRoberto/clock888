@@ -242,7 +242,6 @@ class ViewController: UIViewController {
 
     @objc func buttonAction() {
         isFirstTime ? initTime() : stopTime()
-//        present()
     }
 
     func initTime() {
