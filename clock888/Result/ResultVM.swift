@@ -9,8 +9,6 @@
 import UIKit
 import ViewAnimator
 
-
-
 class ResultVM: NSObject {
     func requestInitialState(_ tableView: UITableView) {
         

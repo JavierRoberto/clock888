@@ -143,7 +143,7 @@
 				A3C1D1FD2146F67C00BEC14A /* Products */,
 				91CD21AC948317057799A9A6 /* Pods */,
 				64B99AE7FEFA5ECC7B05B232 /* Frameworks */,
-				A3E772DB215AB5660019AB6D /* 888 copy-Info.plist */,
+				EFC688162C2C5E0900B433DE /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +177,14 @@
 				A3C1D20B2146F67E00BEC14A /* Info.plist */,
 			);
 			path = clock888;
+			sourceTree = "<group>";
+		};
+		EFC688162C2C5E0900B433DE /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				EF6D735D2C25BCF30030D871 /* 888 copy-Info.plist */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
