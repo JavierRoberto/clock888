@@ -80,8 +80,9 @@ class SadVC: UIViewController {
     fileprivate func setUpAd() {
         Task {
             do {
+                // de pruebas -> "ca-app-pub-3940256099942544/4411468910"
                 interstitial = try await GADInterstitialAd.load(
-                    withAdUnitID: "ca-app-pub-3940256099942544/4411468910", request: GADRequest()
+                    withAdUnitID: "ca-app-pub-7177564470506351/4058926558", request: GADRequest()
                 )
             } catch {
                 print("Failed to load interstitial ad with error: \(error.localizedDescription)")
