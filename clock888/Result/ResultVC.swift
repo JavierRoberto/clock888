@@ -20,7 +20,6 @@ class ResultVC: UIViewController {
         table.separatorStyle = .none
 //        table.backgroundColor = UIColor(red: 0.99, green: 0.55, blue: 0.4, alpha: 0.1)
         table.backgroundColor = .white
-        table.isHidden = true
         return table
     }()
 
@@ -52,9 +51,6 @@ class ResultVC: UIViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-
-        let resultVM = ResultVM()
-        resultVM.requestInitialState(tableView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
