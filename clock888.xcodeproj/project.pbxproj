@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,18 +30,11 @@
 		A3F322A921668E0E00407DD0 /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3F322A821668E0E00407DD0 /* IBMPlexMono-Medium.ttf */; };
 		A3F322B12167C4F400407DD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3F322AF2167C4F400407DD0 /* Localizable.strings */; };
 		EF6D73512C259C660030D871 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF6D73502C259C660030D871 /* GoogleService-Info.plist */; };
-		EF6D73532C25A18F0030D871 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EF6D73522C25A18F0030D871 /* FirebaseAnalytics */; };
-		EF6D73552C25A18F0030D871 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = EF6D73542C25A18F0030D871 /* FirebaseAnalyticsOnDeviceConversion */; };
-		EF6D73572C25A18F0030D871 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF6D73562C25A18F0030D871 /* FirebaseAnalyticsSwift */; };
-		EF6D73592C25A18F0030D871 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = EF6D73582C25A18F0030D871 /* FirebaseAnalyticsWithoutAdIdSupport */; };
-		EF6D735C2C25B36B0030D871 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = EF6D735B2C25B36B0030D871 /* GoogleMobileAds */; };
-		EF6D735E2C25BCF30030D871 /* 888 copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF6D735D2C25BCF30030D871 /* 888 copy-Info.plist */; };
-		F9A584108891DFC6507B557C /* Pods_888.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAC4E40FC7BF716B99587AF /* Pods_888.framework */; };
+		EFE515F92C2D49E50066FAAA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EFE515F82C2D49E50066FAAA /* FirebaseAnalytics */; };
+		EFE515FC2C2D49F10066FAAA /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = EFE515FB2C2D49F10066FAAA /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		010470090AD3F65B56B076BA /* Pods-888.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-888.debug.xcconfig"; path = "Pods/Target Support Files/Pods-888/Pods-888.debug.xcconfig"; sourceTree = "<group>"; };
-		2DAC4E40FC7BF716B99587AF /* Pods_888.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_888.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35FE4CC217E4D0E0052E56C /* Anonymous_Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Anonymous_Pro.ttf; sourceTree = "<group>"; };
 		A35FE4CE217E4F580052E56C /* LevelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsVC.swift; sourceTree = "<group>"; };
 		A35FE4D0218128B30052E56C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -60,7 +53,7 @@
 		A3C1D20B2146F67E00BEC14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3C1D2112146FB6600BEC14A /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 		A3E772AE21554E070019AB6D /* HappyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappyVC.swift; sourceTree = "<group>"; };
-		A3E772DA215AB5660019AB6D /* 888.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 888.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3E772DA215AB5660019AB6D /* 8:88.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "8:88.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F322792162DAEA00407DD0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A3F322A32163ECDE00407DD0 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		A3F322A521668C9900407DD0 /* IBMPlexMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Light.ttf"; sourceTree = "<group>"; };
@@ -74,7 +67,6 @@
 		A3F322B92168BEEE00407DD0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "clock888/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A3F322BA2168BFBC00407DD0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = clock888/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3F322BB2168BFE700407DD0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = clock888/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		ACF54D7AB0D61499DB77C95F /* Pods-888.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-888.release.xcconfig"; path = "Pods/Target Support Files/Pods-888/Pods-888.release.xcconfig"; sourceTree = "<group>"; };
 		EF6D73502C259C660030D871 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF6D735D2C25BCF30030D871 /* 888 copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "888 copy-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -84,12 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF6D735C2C25B36B0030D871 /* GoogleMobileAds in Frameworks */,
-				EF6D73572C25A18F0030D871 /* FirebaseAnalyticsSwift in Frameworks */,
-				EF6D73592C25A18F0030D871 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
-				EF6D73532C25A18F0030D871 /* FirebaseAnalytics in Frameworks */,
-				EF6D73552C25A18F0030D871 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
-				F9A584108891DFC6507B557C /* Pods_888.framework in Frameworks */,
+				EFE515FC2C2D49F10066FAAA /* GoogleMobileAds in Frameworks */,
+				EFE515F92C2D49E50066FAAA /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,18 +87,8 @@
 		64B99AE7FEFA5ECC7B05B232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2DAC4E40FC7BF716B99587AF /* Pods_888.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		91CD21AC948317057799A9A6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				010470090AD3F65B56B076BA /* Pods-888.debug.xcconfig */,
-				ACF54D7AB0D61499DB77C95F /* Pods-888.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		A33112EE215067E7001797C3 /* Resources */ = {
@@ -141,7 +119,6 @@
 				A3F322AF2167C4F400407DD0 /* Localizable.strings */,
 				A3C1D1FE2146F67C00BEC14A /* clock888 */,
 				A3C1D1FD2146F67C00BEC14A /* Products */,
-				91CD21AC948317057799A9A6 /* Pods */,
 				64B99AE7FEFA5ECC7B05B232 /* Frameworks */,
 				EFC688162C2C5E0900B433DE /* Recovered References */,
 			);
@@ -150,7 +127,7 @@
 		A3C1D1FD2146F67C00BEC14A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A3E772DA215AB5660019AB6D /* 888.app */,
+				A3E772DA215AB5660019AB6D /* 8:88.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,11 +171,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3E772D7215AB5660019AB6D /* Build configuration list for PBXNativeTarget "888" */;
 			buildPhases = (
-				A3E772C7215AB5660019AB6D /* [CP] Check Pods Manifest.lock */,
 				A3E772C8215AB5660019AB6D /* Sources */,
 				A3E772CE215AB5660019AB6D /* Frameworks */,
 				A3E772D0215AB5660019AB6D /* Resources */,
-				A3E772D6215AB5660019AB6D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,14 +181,11 @@
 			);
 			name = 888;
 			packageProductDependencies = (
-				EF6D73522C25A18F0030D871 /* FirebaseAnalytics */,
-				EF6D73542C25A18F0030D871 /* FirebaseAnalyticsOnDeviceConversion */,
-				EF6D73562C25A18F0030D871 /* FirebaseAnalyticsSwift */,
-				EF6D73582C25A18F0030D871 /* FirebaseAnalyticsWithoutAdIdSupport */,
-				EF6D735B2C25B36B0030D871 /* GoogleMobileAds */,
+				EFE515F82C2D49E50066FAAA /* FirebaseAnalytics */,
+				EFE515FB2C2D49F10066FAAA /* GoogleMobileAds */,
 			);
 			productName = clock888;
-			productReference = A3E772DA215AB5660019AB6D /* 888.app */;
+			productReference = A3E772DA215AB5660019AB6D /* 8:88.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -222,12 +194,18 @@
 		A3C1D1F42146F67B00BEC14A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = funtastic;
+				TargetAttributes = {
+					A3E772C6215AB5660019AB6D = {
+						LastSwiftMigration = 1530;
+					};
+				};
 			};
 			buildConfigurationList = A3C1D1F72146F67B00BEC14A /* Build configuration list for PBXProject "clock888" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -241,8 +219,8 @@
 			);
 			mainGroup = A3C1D1F32146F67B00BEC14A;
 			packageReferences = (
-				EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				EF6D735A2C25B36B0030D871 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				EFE515F72C2D49E50066FAAA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				EFE515FA2C2D49F10066FAAA /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = A3C1D1FD2146F67C00BEC14A /* Products */;
 			projectDirPath = "";
@@ -267,49 +245,10 @@
 				EF6D73512C259C660030D871 /* GoogleService-Info.plist in Resources */,
 				A3E772D4215AB5660019AB6D /* Assets.xcassets in Resources */,
 				A3E772D5215AB5660019AB6D /* Main.storyboard in Resources */,
-				EF6D735E2C25BCF30030D871 /* 888 copy-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A3E772C7215AB5660019AB6D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-888-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A3E772D6215AB5660019AB6D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-888/Pods-888-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-888/Pods-888-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-888/Pods-888-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A3E772C8215AB5660019AB6D /* Sources */ = {
@@ -398,6 +337,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -409,6 +349,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -459,6 +400,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -470,6 +412,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -489,7 +432,6 @@
 		};
 		A3E772D8215AB5660019AB6D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 010470090AD3F65B56B076BA /* Pods-888.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -498,15 +440,15 @@
 				DEVELOPMENT_TEAM = 2YJY8MY2HR;
 				INFOPLIST_FILE = "888 copy-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.arcade-games";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.funtastic.clock888;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "8:88";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -514,7 +456,6 @@
 		};
 		A3E772D9215AB5660019AB6D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACF54D7AB0D61499DB77C95F /* Pods-888.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -523,15 +464,15 @@
 				DEVELOPMENT_TEAM = 2YJY8MY2HR;
 				INFOPLIST_FILE = "888 copy-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.arcade-games";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.funtastic.clock888;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "8:88";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -561,15 +502,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		EFE515F72C2D49E50066FAAA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.28.0;
+				minimumVersion = 10.28.1;
 			};
 		};
-		EF6D735A2C25B36B0030D871 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+		EFE515FA2C2D49F10066FAAA /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
@@ -580,29 +521,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EF6D73522C25A18F0030D871 /* FirebaseAnalytics */ = {
+		EFE515F82C2D49E50066FAAA /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = EFE515F72C2D49E50066FAAA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		EF6D73542C25A18F0030D871 /* FirebaseAnalyticsOnDeviceConversion */ = {
+		EFE515FB2C2D49F10066FAAA /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsOnDeviceConversion;
-		};
-		EF6D73562C25A18F0030D871 /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
-		EF6D73582C25A18F0030D871 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EF6D734F2C2599B50030D871 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
-		};
-		EF6D735B2C25B36B0030D871 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EF6D735A2C25B36B0030D871 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			package = EFE515FA2C2D49F10066FAAA /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
